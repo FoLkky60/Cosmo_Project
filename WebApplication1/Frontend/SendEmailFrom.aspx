@@ -366,17 +366,17 @@
             <form id="emailForm" runat="server">
                 <div class="form-group">
                     <label for="recipient">ผู้รับ (To)</label>
-                    <input type="email" id="recipient" name="recipient" placeholder="example@email.com" required>
+                    <input type="email" id="recipient" name="recipient" placeholder="example@email.com" required/>
                 </div>
                 
                 <div class="form-group">
                     <label for="subject">หัวข้อ (Subject)</label>
-                    <input type="text" id="subject" name="subject" placeholder="หัวข้อของอีเมล" required>
+                    <input type="text" id="subject" name="subject" placeholder="หัวข้อของอีเมล" required/>
                 </div>
                 
                 <div class="form-group">
                     <label for="message">ข้อความ (Message)</label>
-                    <textarea id="message" name="message" placeholder="เขียนข้อความของคุณที่นี่..." required></textarea>
+                    <textarea id="message" name="message" placeholder="เขียนข้อความของคุณที่นี่..." required/></textarea>
                 </div>
                 
                 <div class="form-group">
@@ -384,7 +384,7 @@
                     <div class="file-input-group">
                         <div class="file-input-wrapper">
                             <div class="file-input">
-                                <input type="file" id="fileAttachment" name="fileAttachment" multiple>
+                                <input type="file" id="fileAttachment" name="fileAttachment" multiple/>
                                 <label for="fileAttachment" class="file-input-label">
                                     📎 เลือกไฟล์
                                 </label>
@@ -394,7 +394,7 @@
                         
                         <div class="file-input-wrapper">
                             <div class="file-input">
-                                <input type="file" id="imageAttachment" name="imageAttachment" accept="image/*" multiple>
+                                <input type="file" id="imageAttachment" name="imageAttachment" accept="image/*" multiple/>
                                 <label for="imageAttachment" class="file-input-label">
                                     🖼️ เลือกรูปภาพ
                                 </label>
@@ -407,7 +407,7 @@
                 <div class="form-group">
                     <label>เพิ่มลิงค์</label>
                     <div class="link-input-group">
-                        <input type="url" id="linkInput" placeholder="https://example.com">
+                        <input type="url" id="linkInput" placeholder="https://example.com"/>
                         <button type="button" class="add-link-btn" onclick="addLink()">เพิ่ม</button>
                     </div>
                     <div class="links-list" id="linksList"></div>
