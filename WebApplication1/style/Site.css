@@ -1,0 +1,381 @@
+﻿body {
+    font-family: "Inria Sans", sans-serif;
+}
+
+.text-ls-lg {
+    letter-spacing: 0.15em;
+}
+
+.navber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+@media (min-width: 768px) {
+    .navber {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .navber {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+        .hamburger-menu .line {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+}
+
+.navber a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .navber a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+.text-nav {
+    color: white;
+    transition: 0.5s;
+}
+
+    .text-nav:hover {
+        color:red;    
+    }
+
+.active-link {
+    color: red;
+}
+
+
+.sarabun-thin {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.sarabun-extralight {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.sarabun-light {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.sarabun-regular {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sarabun-medium {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sarabun-semibold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.sarabun-bold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.sarabun-extrabold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.sarabun-thin-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.sarabun-extralight-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.sarabun-light-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.sarabun-regular-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.sarabun-medium-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.sarabun-semibold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.sarabun-bold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.sarabun-extrabold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+.inria-sans-light {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inria-sans-bold {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inria-sans-light-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.inria-sans-regular-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.inria-sans-bold-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.bg-cusmo {
+    background-color: #076FCE;
+    color: black;
+}
+.bg-cusmo-more {
+    background-color: #F6F6F6;
+    color: black;
+}
+
+.bg-cus {
+    background-color: #065ba7;
+}
+
+.t-xl {
+    font-size: 1.8rem;
+}
+
+.cursor-pointer {
+    cursor:pointer;
+}
+
+.custom-link {
+    cursor: pointer;
+    color: white; /* สีตัวอักษรขาว */
+    text-decoration: none; /* ลบขีดใต้ */
+}
+
+    .custom-link:focus {
+        outline: none; /* ลบเส้นขอบเมื่อถูกคลิก */
+    }
+
+.nav-w {
+    padding: 20px;
+    background-color: #065ba7;
+    color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.bg-main {
+    background-color: #076FCE;
+}
+
+.btnlog {
+    background-color: transparent; 
+    border: none;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.row-main {
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+
+}
+
+.detail-quations {
+    display: inline-flex;
+    align-items: center; 
+    white-space: nowrap; 
+    gap: 6px;
+}
+.section-from {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding:2px;
+}
+
+.detail-quations-main {
+
+    text-align:start;
+
+    max-width:700px;
+}
+@media (min-width: 768px) {
+    .section-from {
+        flex-direction: row;
+        gap: 12px;
+    }
+    .detail-quations-main {
+        height:fit-content;
+    }
+
+    .detail-quations {
+        justify-content: flex-start;
+    }
+
+    .row-main .detail-quations:nth-child(1) {
+        flex: 2 1 40%;
+    }
+
+    .row-main .detail-quations:nth-child(2),
+    .row-main .detail-quations:nth-child(3),
+    .row-main .detail-quations:nth-child(4) {
+        flex: 1 1 10%;
+        text-align: center;
+    }
+
+    .row-main .detail-quations:nth-child(5) {
+        flex: 2 1 30%;
+    }
+}
+
+
+
+.btn-submit {
+    width: 100px;
+    background-color: #005099;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+    .btn-submit:hover {
+        background-color: #01427D;
+        color: white;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+.btn-cancle {
+    width: 100px;
+    text-align: center;
+    background-color: white;
+    color: #01427D;
+    border: 1px solid #005099;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+    .btn-cancle:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.block {
+    animation: appear 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.view {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+

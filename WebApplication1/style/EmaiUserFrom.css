@@ -1,0 +1,193 @@
+﻿.container-main {
+    display:flex;
+    align-content:center;
+    flex-direction:column;
+    background-color:white;
+    border-radius:10px;
+    width:400px;
+    height:auto;
+    overflow:hidden;
+    padding-bottom:15px;
+
+}
+
+
+.int-form {
+    height:150px;
+}
+
+.bg-cus {
+    background-color: #076FCE;
+}
+
+.text-none:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+textarea {
+    resize: vertical; 
+    width: 100%; 
+    max-height:300px;
+}
+.border-but {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.bg-g {
+    background-color:#bebebe;
+}
+
+
+.sarabun-thin {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.sarabun-extralight {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.sarabun-light {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.sarabun-regular {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sarabun-medium {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sarabun-semibold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.sarabun-bold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.sarabun-extrabold {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.sarabun-thin-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.sarabun-extralight-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.sarabun-light-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.sarabun-regular-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.sarabun-medium-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.sarabun-semibold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.sarabun-bold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.sarabun-extrabold-italic {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+.inria-sans-light {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inria-sans-bold {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inria-sans-light-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.inria-sans-regular-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.inria-sans-bold-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+#FileUpload1 {
+    display: none;
+}
+
+.custom-upload-btn {
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+    .custom-upload-btn:hover {
+        background-color: #f8f9fa;
+    }
+
+#file-name {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}

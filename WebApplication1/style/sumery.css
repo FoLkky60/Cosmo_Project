@@ -1,0 +1,76 @@
+﻿.grid-sum th {
+    background-color: #065BA7;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.usercard {
+    min-width:200px;
+    width:auto;
+    max-width:300px;
+    overflow:auto;
+   
+}
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shadowcustom {
+   
+    box-shadow: none;
+}
+
+.mw {
+    max-width:1400px;
+}
+.w-fit {
+    width:fit-content;
+}
+
+.tiny {
+    font-size:10px;
+}
+
+.gradient-bg {
+    background: #cfcfcf;
+    background: linear-gradient(179deg, rgba(207, 207, 207, 1) 0%, rgba(220, 220, 220, 1) 0%, rgba(227, 227, 227, 0.9) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 100%);
+}
+
+@media (min-width: 992px) {
+    .responsive-shadow {
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+}
+
+
+
+.pager a {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 2px;
+    text-decoration: none;
+    background-color: #076FCE;
+    border-radius: 4px;
+    color: white;
+}
+
+.pager span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 2px;
+    text-decoration: none;
+    background-color: #065ba7;
+    border-radius: 4px;
+    color: white;
+}
+
+.pager td {
+    
+    border:none;
+}
+.pager tr {
+    border:none;
+}

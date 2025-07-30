@@ -1,0 +1,176 @@
+﻿.search-dropdown {
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: white;
+}
+
+.searchbox {
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    width:100%;
+    min-width:120px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.searchbox-2 {
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    min-width: 120px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.dropdown-box {
+
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.search-calender {
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.print-box {
+    border: 1px solid #808080;
+    outline: none;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    background-color: #065ba7;
+    color:white;
+    transition:0.3s;
+}
+    .print-box:hover {
+        background-color: #01427D;
+    }
+
+.custom-calendar {
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+}
+
+    .custom-calendar td, .custom-calendar th {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .custom-calendar .today {
+        background-color: #ffcc00;
+        color: white;
+    }
+
+    .custom-calendar .selected {
+        background-color: #009688;
+        color: white;
+    }
+
+    .custom-calendar .day {
+        cursor: pointer;
+    }
+
+        .custom-calendar .day:hover {
+            background-color: #f1f1f1;
+        }
+
+    .custom-calendar .header {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+.grid-w {
+    width: 100%;
+    
+}
+.GridViewHeader {
+    
+    background-color: #065ba7;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.GridViewHeader th {
+    background-color: #065ba7;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .GridViewHeader td {
+        background-color: #065ba7;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+td {
+    height:40px;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width:250px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+.popupEdit {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: fit-content;
+    height:90%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
