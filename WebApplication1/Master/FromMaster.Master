@@ -33,32 +33,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <script>
-        function openPopup() {
-            // แสดง Overlay และ Popup
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
-        }
 
-        function closePopup() {
-            // ซ่อน Overlay และ Popup
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('popup').style.display = 'none';
-        }
-    </script>
-    <script>
-        function openPopupEdit() {
-            // แสดง Overlay และ Popup
-            document.getElementById('overlayEdit').style.display = 'block';
-            document.getElementById('popupEdit').style.display = 'block';
-        }
-
-        function closeEditPopup() {
-            // ซ่อน Overlay และ Popup
-            document.getElementById('overlayEdit').style.display = 'none';
-            document.getElementById('popupEdit').style.display = 'none';
-        }
-    </script>
 </head>
 <body class="p-0 m-0 sarabun-thin">
     <form runat="server">

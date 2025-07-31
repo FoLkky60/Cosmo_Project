@@ -12,5 +12,5 @@ Option Explicit On
 
 
 
-Partial Public Class Profile
+Partial Public Class ProfilePage
 End Class

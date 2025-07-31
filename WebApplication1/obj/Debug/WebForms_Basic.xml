@@ -4870,15 +4870,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._GridViewPopup">
-<summary>
-GridViewPopup control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication1.SendEmailFrom._emailForm">
 <summary>
 emailForm control.

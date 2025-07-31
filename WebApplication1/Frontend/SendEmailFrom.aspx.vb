@@ -37,22 +37,5 @@ Public Class SendEmailFrom
         End Try
     End Function
 
-    ' ฟังก์ชันคลิกปุ่มส่งอีเมล
-    Protected Sub SendEmailButton_Click(sender As Object, e As EventArgs)
-        ' รับค่าจากฟอร์ม
-        Dim recipient As String = recipient.Value
-        Dim subject As String = subject.Value
-        Dim message As String = message.Value
 
-        ' เรียกฟังก์ชันส่งอีเมล
-        Dim emailSender As New SendEmailFrom()
-        Dim result As Boolean = emailSender.SendEmail(recipient, subject, message)
-
-        ' แสดงผลลัพธ์
-        If result Then
-            Response.Write("Email sent successfully!")
-        Else
-            Response.Write("Error sending email.")
-        End If
-    End Sub
 End Class

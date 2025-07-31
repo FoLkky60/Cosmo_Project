@@ -196,28 +196,5 @@
 
 
 
-    Protected Sub btnShowPopup_Click(sender As Object, e As EventArgs)
-        ShowPopupWithGrid()
-    End Sub
-
-    Protected Sub ShowPopupWithGrid()
-        Dim dt As DataTable = GetMockData()
-
-        If dt.Rows.Count = 0 Then
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('ไม่มีข้อมูล');", True)
-            Return
-        End If
-
-        GridViewPopup.DataSource = dt
-        GridViewPopup.DataBind()
-
-        ' เปิด popup ซ้ำหลัง postback
-        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "openPopup", "openPopupEdit();", True)
-    End Sub
-
-    Protected Sub GridViewPopup_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
-        GridViewPopup.PageIndex = e.NewPageIndex
-        ShowPopupWithGrid()
-    End Sub
 
 End Class

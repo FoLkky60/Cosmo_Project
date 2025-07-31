@@ -35,13 +35,17 @@
 <body class="p-0 m-0  sarabun-thin">
     <form runat="server">
         <div class="d-flex justify-content-between align-content-center gap-4 px-5 nav-w bg-cos ">
+            <div class=" d-flex justify-content-between w-100">
+                <a href="home.aspx" class="fw-bold  text-decoration-none text-white">cosmo</a>
+                <div class="d-flex gap-3">
+    <a href="home" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal" id="homeLink">Home</a>
+    <a href="ProfilePage" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal" id="profileLink">Profile</a>
+</div>
 
-            <a href="home.aspx" class="fw-bold  text-decoration-none text-white">cosmo</a>
-            <div class=" d-flex gap-5 ">
-
-                <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
-
+                
+                 <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
             </div>
+
         </div>
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
