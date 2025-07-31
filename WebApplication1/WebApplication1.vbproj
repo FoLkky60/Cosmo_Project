@@ -167,6 +167,7 @@
     <Content Include="Frontend\Login.aspx" />
     <Content Include="Frontend\MonitorTLS.aspx" />
     <Content Include="Frontend\ProfilePage.aspx" />
+    <Content Include="Frontend\RestingPage.aspx" />
     <Content Include="Frontend\SendEmailFrom.aspx" />
     <Content Include="Frontend\SummeryTLS.aspx" />
     <Content Include="Global.asax" />
@@ -305,6 +306,13 @@
     </Compile>
     <Compile Include="Frontend\ProfilePage.aspx.vb">
       <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Frontend\RestingPage.aspx.designer.vb">
+      <DependentUpon>RestingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\RestingPage.aspx.vb">
+      <DependentUpon>RestingPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Frontend\SendEmailFrom.aspx.designer.vb">

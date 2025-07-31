@@ -212,6 +212,7 @@
         }
 
         .modal-content {
+
             position: absolute;
             top: 50%;
             left: 50%;
@@ -431,26 +432,30 @@
     <!-- Modal สำหรับเปลี่ยนรหัสผ่าน -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
-            <button class="close-btn" onclick="closePasswordModal()">&times;</button>
-            <h3>🔒 เปลี่ยนรหัสผ่าน</h3>
-            <form onsubmit="changePassword(event)">
-                <div class="form-group">
-                    <label for="currentPassword">รหัสผ่านปัจจุบัน:</label>
-                    <input type="password" id="currentPassword" required>
+            <div class="d-flex justify-content-center ">
+                <div class="">
+                    <button class="close-btn" onclick="closePasswordModal()">&times;</button>
+                    <h3>🔒 เปลี่ยนรหัสผ่าน</h3>
+                    <div onsubmit="changePassword(event)">
+                        <div class="form-group">
+                            <label for="currentPassword">รหัสผ่านปัจจุบัน:</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">รหัสผ่านใหม่:</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">ยืนยันรหัสผ่านใหม่:</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" onclick="closePasswordModal()">ยกเลิก</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="newPassword">รหัสผ่านใหม่:</label>
-                    <input type="password" id="newPassword" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirmPassword">ยืนยันรหัสผ่านใหม่:</label>
-                    <input type="password" id="confirmPassword" required>
-                </div>
-                <div class="actions">
-                    <button type="submit" class="btn btn-primary">บันทึก</button>
-                    <button type="button" class="btn btn-secondary" onclick="closePasswordModal()">ยกเลิก</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </asp:Content>
