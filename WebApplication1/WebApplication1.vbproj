@@ -164,7 +164,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Frontend\FromQeations.aspx" />
     <Content Include="Frontend\Home.aspx" />
-    <Content Include="Frontend\Login.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Frontend\MonitorTLS.aspx" />
     <Content Include="Frontend\ProfilePage.aspx" />
     <Content Include="Frontend\RestingPage.aspx" />
@@ -250,6 +250,10 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\clsConnDbSQL.vb" />
+    <Compile Include="App_Code\clsPO.vb" />
+    <Compile Include="App_Code\clsSystemLogsInfo.vb" />
+    <Compile Include="App_Code\clsUsr.vb" />
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="About.aspx.designer.vb">
@@ -287,10 +291,10 @@
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Frontend\Login.aspx.designer.vb">
+    <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\Login.aspx.vb">
+    <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
