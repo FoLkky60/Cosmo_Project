@@ -384,8 +384,8 @@
                                             CssClass="gridview-class">
                                         </asp:GridView>
 
-                                        <asp:TextBox ID="txtKeyword" runat="server" CssClass="searchbox px-4" AutoPostBack="true"
-                                            OnTextChanged="txtKeyword_TextChanged" placeholder="Search..." />
+<%--                                        <asp:TextBox ID="txtKeyword" runat="server" CssClass="searchbox px-4" AutoPostBack="true"
+                                            OnTextChanged="txtKeyword_TextChanged" placeholder="Search..." />--%>
 
                                     </div>
                                 </div>
@@ -393,15 +393,16 @@
                                     <asp:Button ID="btnKeywordSearch" runat="server" Text="Search" CssClass="print-box" OnClick="btnKeywordSearch_Click" />
                                 </div>--%>
 
-                                <div>
+                                <%--<div>
                                     <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" CssClass="dropdown-box dropdown-toggle">
                                         <asp:ListItem Text="All" Value="All"></asp:ListItem>
                                         <asp:ListItem Text="Buyer 1" Value="Buyer 1"></asp:ListItem>
                                         <asp:ListItem Text="Buyer 2" Value="Buyer 2"></asp:ListItem>
                                         <asp:ListItem Text="Buyer 3" Value="Buyer 3"></asp:ListItem>
                                     </asp:DropDownList>
-                                </div>
-                                <div class="">
+                                </div>--%>
+
+                                <%--<div class="">
                                     <div class=" d-flex gap-2">
                                         <div class="">
                                             <asp:TextBox ID="txtDateStart" runat="server" TextMode="Date" CssClass="search-calender"
@@ -413,11 +414,11 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </div>--%>
 
                                 <div>
                                     <asp:Button ID="Button2" runat="server" Text="Print" class="print-box" OnClientClick="openPopup(); return false;" />
-                                    <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="print-box" OnClick="btnClear_Click" />
+                                   <%-- <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="print-box" OnClick="btnClear_Click" />--%>
                                 </div>
 
                             </div>
@@ -425,10 +426,7 @@
                     </div>
                 </div>
                 <div class="w-100 overflow-auto mw shadowcustom bg-white">
-                    <asp:GridView
-                        ID="GridView1"
-                        runat="server"
-                        AutoGenerateColumns="False"
+                    <asp:GridView ID="GridViewMailFormat" runat="server" AutoGenerateColumns="False"
                         Width="100%"
                         Style="border: 1px solid #ddd;"
                         CssClass="grid-sum"
@@ -437,36 +435,23 @@
                         OnPageIndexChanging="GridView1_PageIndexChanging">
                         <PagerStyle CssClass="pager" HorizontalAlign="Center" />
                         <Columns>
-                            <%--<asp:TemplateField HeaderText="Edit">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="btnShowPopup" runat="server" Text="Edit" OnClick="btnShowPopup_Click" />
-                                </ItemTemplate>
-                            </asp:TemplateField>--%>
-                            <asp:BoundField DataField="SupplierId" HeaderText="SupplierId" SortExpression="SupplierId" />
-                            <asp:BoundField DataField="SendMail" HeaderText="Mail" SortExpression="SendMail" />
-                            <asp:BoundField DataField="SendAgain" HeaderText="SA" SortExpression="SendAgain" />
-                            <asp:BoundField DataField="Buyer" HeaderText="Buyer" SortExpression="Buyer" />
-                            <asp:BoundField DataField="CommitmentLetter" HeaderText="Letter" SortExpression="CommitmentLetter" />
-                            <asp:BoundField DataField="Seller" HeaderText="Seller" SortExpression="Seller" />
-                            <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                            <asp:BoundField DataField="TaxpayerAccountNumber" HeaderText="Taxpayer" SortExpression="TaxpayerAccountNumber" />
-                            <asp:BoundField DataField="Response" HeaderText="Response" SortExpression="Response" />
-                            <asp:BoundField DataField="RespondentsSignature" HeaderText="Respondent Signature" SortExpression="RespondentsSignature" />
-                            <asp:BoundField DataField="Note" HeaderText="Note" SortExpression="Note" />
-                            <asp:BoundField DataField="ResponseDate" HeaderText="Response Date" SortExpression="ResponseDate" />
-                            <asp:BoundField DataField="LastSentDate" HeaderText="Last Sent Date" SortExpression="LastSentDate" />
-                            <asp:BoundField DataField="PrintAction" HeaderText="Print" SortExpression="PrintAction" />
+                            <asp:BoundField DataField="MailID" HeaderText="MailID" />
+                            <asp:BoundField DataField="Type_Mail" HeaderText="Type Mail" />
+                            <asp:BoundField DataField="Year" HeaderText="Year" />
+                            <asp:BoundField DataField="Subject" HeaderText="Subject" />
+                            <asp:BoundField DataField="ApprovedBy" HeaderText="Approved By" />
+                            <asp:BoundField DataField="ApprovedDate" HeaderText="Approved Date" />
+                            <asp:BoundField DataField="CreatedDate" HeaderText="Created Date" />
+                            <asp:BoundField DataField="CreatedBy" HeaderText="Created By" />
+                            <asp:BoundField DataField="UpdatedDate" HeaderText="Updated Date" />
+                            <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By" />
+                            <asp:BoundField DataField="Status" HeaderText="Status" />
                             <asp:TemplateField HeaderText="View" SortExpression="ViewAction">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkView" runat="server" Text="View" OnClientClick="openPopupEdit(); return false;" />
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-
-
-
                         </Columns>
-                        <HeaderStyle CssClass="GridViewHeader" />
                     </asp:GridView>
                 </div>
 

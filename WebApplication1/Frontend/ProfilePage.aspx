@@ -17,7 +17,6 @@
             transition: transform 0.3s ease;
         }
 
-        
 
         .profile-header {
             text-align: center;

@@ -353,9 +353,14 @@
                 font-size: 12px;
             }
         }
+        .overflows {
+            width:500px;
+            overflow:auto;
+        }
     </style>
 </head>
 <body>
+
     <div class="email-container">
         <div class="header">
             <h1>📧 ส่ง Email</h1>
@@ -416,9 +421,18 @@
                 <button type="submit" class="send-btn">
                     📤 ส่งอีเมล
                 </button>
+                <div class="overflows">
+                    <asp:GridView ID="GridViewMailFormat" runat="server" AutoGenerateColumns="True"></asp:GridView>
+                </div>
+            
             </form>
         </div>
+
+       
     </div>
+
+
+
     
     <!-- Success Popup -->
     <div class="popup-overlay" id="popupOverlay">

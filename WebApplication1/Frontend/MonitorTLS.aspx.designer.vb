@@ -23,42 +23,6 @@ Partial Public Class MonitorTLS
     Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''txtKeyword control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtKeyword As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''DropDownList1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''txtDateStart control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDateStart As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtDateEnd control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDateEnd As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Button2 control.
     '''</summary>
     '''<remarks>
@@ -68,22 +32,13 @@ Partial Public Class MonitorTLS
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnClear control.
+    '''GridViewMailFormat control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnClear As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''GridView1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents GridViewMailFormat As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Button1 control.

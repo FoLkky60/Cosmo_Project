@@ -21,4 +21,13 @@ Partial Public Class SendEmailFrom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents emailForm As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
+    '''GridViewMailFormat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridViewMailFormat As Global.System.Web.UI.WebControls.GridView
 End Class
