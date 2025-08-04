@@ -4798,33 +4798,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._txtKeyword">
-<summary>
-txtKeyword control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._txtDateStart">
-<summary>
-txtDateStart control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._txtDateEnd">
-<summary>
-txtDateEnd control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication1.MonitorTLS._Button2">
 <summary>
 Button2 control.
@@ -4852,15 +4825,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._GridViewMail">
-<summary>
-GridViewMail control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication1.MonitorTLS._pnlPopup">
 <summary>
 pnlPopup control.
@@ -4870,27 +4834,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._btnClose">
+<member name="F:WebApplication1.MonitorTLS._hdnMailID">
 <summary>
-btnClose control.
+hdnMailID control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._lblSubject">
+<member name="F:WebApplication1.MonitorTLS._txtSubject">
 <summary>
-lblSubject control.
+txtSubject control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._lblBody">
+<member name="F:WebApplication1.MonitorTLS._txtBody">
 <summary>
-lblBody control.
+txtBody control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -4906,18 +4870,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._btnReject">
+<member name="F:WebApplication1.MonitorTLS._btnClose">
 <summary>
-btnReject control.
+btnClose control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._btnApprove">
+<member name="F:WebApplication1.MonitorTLS._btnDelete">
 <summary>
-btnApprove control.
+btnDelete control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._btnSave">
+<summary>
+btnSave control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -4942,9 +4915,63 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.SendEmailFrom._GridViewMailFormat">
+<member name="F:WebApplication1.SendEmailFrom._txtRecipient">
 <summary>
-GridViewMailFormat control.
+txtRecipient control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._txtSubject">
+<summary>
+txtSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._txtBody">
+<summary>
+txtBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._fuFile">
+<summary>
+fuFile control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._FileUpload1">
+<summary>
+FileUpload1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._fuImage">
+<summary>
+fuImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._btnSend">
+<summary>
+btnSend control.
 </summary>
 <remarks>
 Auto-generated field.

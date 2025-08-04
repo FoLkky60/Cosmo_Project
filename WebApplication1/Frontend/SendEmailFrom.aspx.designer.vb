@@ -23,11 +23,65 @@ Partial Public Class SendEmailFrom
     Protected WithEvents emailForm As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''GridViewMailFormat control.
+    '''txtRecipient control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridViewMailFormat As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents txtRecipient As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtSubject control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSubject As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtBody control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtBody As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''fuFile control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents fuFile As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''FileUpload1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''fuImage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents fuImage As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''btnSend control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSend As Global.System.Web.UI.WebControls.Button
 End Class

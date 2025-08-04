@@ -113,14 +113,20 @@
         }
 
         .popup-body {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            
             padding: 32px;
         }
 
         .field-group {
+   
             margin-bottom: 28px;
         }
 
         .field-label {
+            width:350px;
             font-size: 14px;
             font-weight: 600;
             color: #374151;
@@ -137,7 +143,7 @@
             padding: 16px;
             font-size: 15px;
             max-height:150px;
-            overflow:auto;
+            
             line-height: 1.6;
             color: #4b5563;
             transition: all 0.2s ease;
@@ -307,6 +313,30 @@
                 width: 100%;
             }
         }
+        .form-controls {
+            width: 100% !important;
+            box-sizing: border-box;
+            min-width: 0;
+            max-width: 100%;
+            display: block;
+            outline:none;
+            border: 1px solid rgba(255, 255, 255, 0.2) ;
+            background: none;
+        }
+
+        .btn-cancle-custom {
+            background-color:#bcbcbc;
+            color:white;
+
+        }
+       
+        .btn-cancle-custom:hover {
+             background-color:#bcbcbc;
+            color:black;
+            transform:translateY(-5px)
+
+        }
+
     </style>
     <script>
         function openPopup() {
@@ -323,14 +353,12 @@
     </script>
     <script>
         function openPopupEdit() {
+            document.getElementById('<%= pnlPopup.ClientID %>').style.display = 'block';
             document.getElementById('overlayEdit').style.display = 'block';
-            document.getElementById('popupEdit').style.display = 'block';
         }
-
         function closeEditPopup() {
-            
+            document.getElementById('<%= pnlPopup.ClientID %>').style.display = 'none';
             document.getElementById('overlayEdit').style.display = 'none';
-            document.getElementById('popupEdit').style.display = 'none';
         }
         function handleApprove() {
             alert('อีเมลได้รับการอนุมัติแล้ว');
@@ -432,7 +460,10 @@
                         CssClass="grid-sum"
                         AllowPaging="True"
                         PageSize="10"
-                        OnPageIndexChanging="GridView1_PageIndexChanging">
+                        DataKeyNames="MailID"
+                        OnPageIndexChanging="GridView1_PageIndexChanging"
+                        OnRowCommand="GridViewMailFormat_RowCommand"
+                        >
                         <PagerStyle CssClass="pager" HorizontalAlign="Center" />
                         <Columns>
                             <asp:BoundField DataField="MailID" HeaderText="MailID" />
@@ -446,9 +477,14 @@
                             <asp:BoundField DataField="UpdatedDate" HeaderText="Updated Date" />
                             <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By" />
                             <asp:BoundField DataField="Status" HeaderText="Status" />
-                            <asp:TemplateField HeaderText="View" SortExpression="ViewAction">
+                            <asp:TemplateField HeaderText="View">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnkView" runat="server" Text="View" OnClientClick="openPopupEdit(); return false;" />
+                                    <asp:LinkButton
+                                        ID="lnkView"
+                                        runat="server"
+                                        Text="View"
+                                        CommandName="ViewMail"
+                                        CommandArgument='<%# Eval("MailID") %>'  />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
@@ -494,52 +530,47 @@
     </div>
 
     <div id="overlayEdit" class="overlay" onclick="closeEditPopup()"></div>
-    <div id="popupEdit" class="popupstatus">
-        <div class="popup-overlay">
-        <div class="popup-container">
-            <div class="popup-header">
-                <h2 class="popup-title">ตรวจสอบอีเมล</h2>
-                <button class="close-btn"></button>
-            </div>
-            
-            <div class="popup-body">
+    <asp:Panel ID="pnlPopup" runat="server" CssClass="popupstatus bg-white" Visible="False">
+        <div class="popup-body">
+            <asp:HiddenField ID="hdnMailID" runat="server" />
+            <div class="field-group">
+                <div class="field-label">📝 หัวเรื่อง</div>
+                <div class="field-content">
+                    <asp:TextBox ID="txtSubject" runat="server" CssClass="form-controls " />
+                </div>
                 
+            </div>
 
-                <div class="field-group">
-                    <div class="field-label">📝 หัวเรื่อง</div>
-                    <div class="field-content subject">
-                        ขอความอนุเคราะห์ในการจัดการประชุมประจำเดือน
-                    </div>
+            <div class="field-group">
+                <div class="field-label">💬 รายละเอียด</div>
+                <div class="field-content">
+                    <asp:TextBox ID="txtBody" runat="server" CssClass="form-controls" TextMode="MultiLine" Rows="5" />
                 </div>
+                
+            </div>
 
-                <div class="field-group">
-                    <div class="field-label">💬 รายละเอียด</div>
-                    <div class="field-content description">
-                        เรียน ผู้จัดการฝ่าย<br><br>
-                        ขอความอนุเคราะห์ในการจัดการประชุมประจำเดือนสำหรับทีมพัฒนาระบบ โดยขอนัดหมายในวันที่ 15 สิงหาคม 2567 เวลา 14:00 น. เพื่อหารือเกี่ยวกับแผนงานในไตรมาสหน้า และการปรับปรุงระบบที่จำเป็น
-                      
-                    </div>
-                </div>
-
-                <div class="field-group">
-                    <div class="field-label">📎 ไฟล์แนบ</div>
-                    <div class="file-item">
-                        <div class="file-icon">PDF</div>
-                        <div class="file-info">
-                            <div class="file-name">แผนงานประชุม_สิงหาคม.pdf</div>
-                            <div class="file-size">2.4 MB</div>
+            <div class="field-group">
+                <div class="field-label">📎 ไฟล์แนบ</div>
+                <asp:Repeater ID="rptAttachments" runat="server">
+                    <ItemTemplate>
+                        <div class="file-item">
+                            <div class="file-icon">📄</div>
+                            <div class="file-info">
+                                <div class="file-name"><%# Eval("FileName") %></div>
+                                <div class="file-size"><%# Eval("FileSize") %></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
 
-                <div class="action-buttons">
-                    <button class="btn btn-reject" onclick="handleReject()">ปฏิเสธ</button>
-                    <button class="btn btn-approve" onclick="handleApprove()">อนุมัติ</button>
-                </div>
+            <div class="action-buttons">
+                <asp:Button ID="btnClose" runat="server" Text="Close" CssClass="btn btn-cancle-custom" OnClick="btnClose_Click" />
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-reject" OnClick="btnDelete_Click" OnClientClick="return confirm('ยืนยันการลบข้อมูลนี้?');" />
+                <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-approve" OnClick="btnSave_Click" />
             </div>
         </div>
-    </div>
-    </div>
+    </asp:Panel>
 
 
 </asp:Content>

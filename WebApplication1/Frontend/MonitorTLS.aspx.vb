@@ -5,9 +5,13 @@ Imports System.Net.Mail
 Public Class MonitorTLS
     Inherits System.Web.UI.Page
     Dim connStr As String = "Data Source=VMWEBSERVER;Initial Catalog=SupplyChain;Persist Security Info=True;User ID=SupplyChain;Password=9999"
+
+
+    Public Property GridViewMail As Object
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            LoadTb()
+            BindMailFormatGrid()
         End If
     End Sub
 
@@ -37,25 +41,20 @@ Public Class MonitorTLS
         LoadTb() ' หรือ BindMailFormatGrid()
     End Sub
 
-    Private Sub BindMailGrid()
+    Private Sub BindMailFormatGrid()
         Dim dt As New DataTable()
         Using conn As New SqlConnection(connStr)
             conn.Open()
-            Dim cmd As New SqlCommand("SELECT MailID, Subject FROM PSR_M_MailFormat ORDER BY MailID DESC", conn)
+            Dim cmd As New SqlCommand("SELECT TOP 1000 MailID, Type_Mail, Year, Subject, Body, Status, ApprovedBy, ApprovedDate, CreatedDate, CreatedBy, UpdatedDate, UpdatedBy FROM PSR_M_MailFormat", conn)
             Dim da As New SqlDataAdapter(cmd)
             da.Fill(dt)
         End Using
-        GridViewMail.DataSource = dt
-        GridViewMail.DataBind()
+        GridViewMailFormat.DataSource = dt
+        GridViewMailFormat.DataBind()
     End Sub
 
-    Protected Sub GridViewMail_RowCommand(sender As Object, e As GridViewCommandEventArgs)
-        If e.CommandName = "ViewMail" Then
-            Dim mailID As Integer = Convert.ToInt32(e.CommandArgument)
-            LoadMailDetails(mailID)
-            pnlPopup.Visible = True
-        End If
-    End Sub
+
+
 
     Private Sub LoadMailDetails(mailID As Integer)
         Using conn As New SqlConnection(connStr)
@@ -66,8 +65,9 @@ Public Class MonitorTLS
             cmdMail.Parameters.AddWithValue("@MailID", mailID)
             Dim reader = cmdMail.ExecuteReader()
             If reader.Read() Then
-                lblSubject.Text = reader("Subject").ToString()
-                lblBody.Text = reader("Body").ToString().Replace(vbCrLf, "<br>")
+                txtSubject.Text = reader("Subject").ToString()
+                txtBody.Text = reader("Body").ToString()
+                hdnMailID.Value = mailID.ToString()
             End If
             reader.Close()
 
@@ -88,10 +88,48 @@ Public Class MonitorTLS
             rptAttachments.DataBind()
         End Using
     End Sub
+    Protected Sub GridViewMailFormat_RowCommand(sender As Object, e As GridViewCommandEventArgs)
+        If e.CommandName = "ViewMail" Then
+            Dim mailId As Integer = Convert.ToInt32(e.CommandArgument)
+            LoadMailDetails(mailId)
+            pnlPopup.Visible = True
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showEditPopup", "openPopupEdit();", True)
+        End If
+    End Sub
+
+    Protected Sub btnSave_Click(sender As Object, e As EventArgs)
+        Dim mailId As Integer = Convert.ToInt32(hdnMailID.Value)
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+            Dim cmd As New SqlCommand("UPDATE PSR_M_MailFormat SET Subject=@Subject, Body=@Body, UpdatedDate=GETDATE() WHERE MailID=@MailID", conn)
+            cmd.Parameters.AddWithValue("@Subject", txtSubject.Text)
+            cmd.Parameters.AddWithValue("@Body", txtBody.Text)
+            cmd.Parameters.AddWithValue("@MailID", mailId)
+            cmd.ExecuteNonQuery()
+        End Using
+        pnlPopup.Visible = False
+        BindMailFormatGrid()
+        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "closeEditPopup", "closeEditPopup();", True)
+    End Sub
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         pnlPopup.Visible = False
+        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "closeEditPopup", "closeEditPopup();", True)
     End Sub
+
+    Protected Sub btnDelete_Click(sender As Object, e As EventArgs)
+        Dim mailId As Integer = Convert.ToInt32(hdnMailID.Value)
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+            Dim cmd As New SqlCommand("DELETE FROM PSR_M_MailFormat WHERE MailID = @MailID", conn)
+            cmd.Parameters.AddWithValue("@MailID", mailId)
+            cmd.ExecuteNonQuery()
+        End Using
+        pnlPopup.Visible = False
+        BindMailFormatGrid()
+        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "closeEditPopup", "closeEditPopup();", True)
+    End Sub
+
     'Public Sub PopulateBuyerDropdown(dt As DataTable)
     '    DropDownList1.Items.Clear()
     '    DropDownList1.Items.Add(New ListItem("All", "All"))
