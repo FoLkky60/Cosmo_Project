@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
- <link href="bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="style/Site.css" rel="stylesheet" />
     <link href="style/home.css" rel="stylesheet" />
@@ -16,11 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playpen+Sans+Thai:wght@100..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -34,19 +34,28 @@
 </head>
 <body class="p-0 m-0  sarabun-thin">
     <form runat="server">
-        <div class="d-flex justify-content-between align-content-center gap-4 px-5 nav-w bg-cos ">
-            <div class=" d-flex justify-content-between w-100">
-                <a href="home.aspx" class="fw-bold  text-decoration-none text-white">cosmo</a>
-                <div class="d-flex gap-3">
-    <a href="home" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal" id="homeLink">Home</a>
-    <a href="ProfilePage" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal" id="profileLink">Profile</a>
-</div>
+        <div class="d-flex justify-content-between align-content-center gap-4 px-5 nav-w bg-cus">
+            <a href="home.aspx" class="fw-bold text-decoration-none text-white">
+                <img src="../imge/Logo01.png" width="20" height="20" />
+            </a>
+           
+                <div class=" d-flex gap-5">
+                    <a href="home" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">home</a>
+                    <a href="ProfilePage" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">Profile</a>
+                </div>
+                <div class="d-flex gap-5">
+                    <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
+                </div>
+          
 
-                
-                 <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" onclick="toggleNav()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-
         </div>
+
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
@@ -92,8 +101,8 @@
     <script>
         const cards = document.querySelectorAll('.scroll-card');
         const containerWidth = document.querySelector('.scroll-loop-container').offsetWidth;
-        const speed = 0.5; 
-        const spacing = 340; 
+        const speed = 0.5;
+        const spacing = 340;
 
         // Set initial positions
         cards.forEach((card, index) => {
@@ -121,6 +130,32 @@
 
         animate();
     </script>
+    <!-- Highlight current navigation link -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname.toLowerCase();
+
+            document.querySelectorAll('.custom-link').forEach(link => {
+                const href = link.getAttribute('href')?.toLowerCase() || '';
+
+                // Add 'text-danger' class if current path matches link href
+                if (currentPath.includes(href)) {
+                    link.classList.add('text-danger');
+                }
+            });
+        });
+    </script>
+
+    <!-- Toggle navigation visibility -->
+    <script>
+        function toggleNav() {
+            const nav = document.querySelector('.navber');
+            const isVisible = nav.style.display === 'flex';
+
+            nav.style.display = isVisible ? 'none' : 'flex';
+        }
+    </script>
+
 
 </body>
 </html>

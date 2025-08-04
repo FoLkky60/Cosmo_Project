@@ -38,7 +38,9 @@
 <body class="p-0 m-0 sarabun-thin">
     <form runat="server">
         <div class="d-flex justify-content-between align-content-center gap-4 px-5 nav-w bg-cus">
-            <a href="home.aspx" class="fw-bold text-decoration-none text-white">cosmo</a>
+            <a href="home.aspx" class="fw-bold text-decoration-none text-white">
+                <img src="../imge/Logo01.png" width="20" height="20" />
+            </a>
             <div class="navber gap-5">
                 <a href="FromQeations" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">แบบประเมิน</a>
                 <a href="MonitorTLS" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">ตรวจสอบ</a>
@@ -100,19 +102,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const currentPath = window.location.pathname.toLowerCase();
-        document.querySelectorAll('.custom-link').forEach(link => {
-            const href = link.getAttribute('href').toLowerCase();
+        window.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname.toLowerCase();
 
-            if (currentPath.includes(href)) {
-                link.classList.add('text-danger');
-            }
+            document.querySelectorAll('.custom-link').forEach(link => {
+                const href = link.getAttribute('href')?.toLowerCase() || '';
+
+                // Add 'text-danger' class if current path matches link href
+                if (currentPath.includes(href)) {
+                    link.classList.add('text-danger');
+                }
+            });
         });
     </script>
+
+    <!-- Toggle navigation visibility -->
     <script>
         function toggleNav() {
             const nav = document.querySelector('.navber');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            const isVisible = nav.style.display === 'flex';
+
+            nav.style.display = isVisible ? 'none' : 'flex';
         }
     </script>
 

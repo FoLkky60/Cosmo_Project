@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -365,12 +367,25 @@
             width: 500px;
             overflow: auto;
         }
+        .contain {
+            display:flex;
+            justify-content:start;
+            align-items:start;
+            cursor:pointer;
+            outline:none;
+            text-decoration:none;
+            border:none;
+            color:white;
+        }
     </style>
 </head>
 <body>
 
     <div class="email-container">
         <div class="header">
+            <a href="Home.aspx" class="contain">
+                <span class="iconify" data-icon="ic:baseline-arrow-back" data-width="24" data-height="24"></span> 
+            </a>
             <h1>📧 ส่ง Email</h1>
             <p>เขียนข้อความและแนบไฟล์ได้อย่างง่ายดาย</p>
         </div>

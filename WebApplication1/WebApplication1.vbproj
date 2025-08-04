@@ -164,6 +164,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Frontend\FromQeations.aspx" />
     <Content Include="Frontend\Home.aspx" />
+    <Content Include="imge\Logo01.png" />
     <Content Include="Login.aspx" />
     <Content Include="Frontend\MonitorTLS.aspx" />
     <Content Include="Frontend\ProfilePage.aspx" />
