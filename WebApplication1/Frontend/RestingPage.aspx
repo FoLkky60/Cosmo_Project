@@ -42,31 +42,31 @@
         <div class=" d-flex justify-content-center align-items-center min-vh-100 gap-4  ">
             <a href="Home" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column   ">
-                    <iconify-icon icon="ic:baseline-assessment" width="80" height="80"></iconify-icon>
+                    <iconify-icon icon="material-symbols-light:home-rounded" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">Home</h5>
                 </div>
             </a>
             <a href="RestingPage" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column   ">
-                    <iconify-icon icon="ic:baseline-assessment" width="80" height="80"></iconify-icon>
+                    <iconify-icon icon="mingcute:paper-fill" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">แบบประเมิน</h5>
                 </div>
             </a>
             <a href="AdminMonitor" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column    ">
-                    <iconify-icon icon="ic:baseline-assessment" width="80" height="80"></iconify-icon>
+                    <iconify-icon icon="ri:admin-fill" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">AdminMonitor</h5>
                 </div>
             </a>
             <a href="EmailMonitorTLS" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column  ">
-                    <iconify-icon icon="ic:baseline-assessment" width="80" height="80"></iconify-icon>
+                    <iconify-icon icon="ic:baseline-email" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">EmailMonitor</h5>
                 </div>
             </a>
             <a href="SummeryTLS" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column    ">
-                    <iconify-icon icon="ic:baseline-assessment" width="80" height="80"></iconify-icon>
+                    <iconify-icon icon="ic:round-people" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">SummeryTLS</h5>
                 </div>
             </a>
