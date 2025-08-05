@@ -12,10 +12,6 @@ Public Class MonitorTLS
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             BindMailFormatGrid()
-
-            'If Session("MailBody") IsNot Nothing Then
-            '    litBody.Text = Server.HtmlDecode(Session("MailBody").ToString())
-            'End If
         End If
     End Sub
 

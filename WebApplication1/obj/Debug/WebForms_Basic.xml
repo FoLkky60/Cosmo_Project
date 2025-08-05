@@ -37,6 +37,33 @@ WebApplication1
  Returns the Asp log object.
  </summary>
 </member>
+<member name="F:WebApplication1.AdminMonitor._txtSearchFrom">
+<summary>
+txtSearchFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.AdminMonitor._Button2">
+<summary>
+Button2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.AdminMonitor._GridView1">
+<summary>
+GridView1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication1.FromQeations._lblCompany">
 <summary>
 lblCompany control.
@@ -4861,18 +4888,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._txtBody">
+<member name="F:WebApplication1.MonitorTLS._rptAttachments">
 <summary>
-txtBody control.
+rptAttachments control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._rptAttachments">
+<member name="F:WebApplication1.MonitorTLS._txtBody">
 <summary>
-rptAttachments control.
+txtBody control.
 </summary>
 <remarks>
 Auto-generated field.

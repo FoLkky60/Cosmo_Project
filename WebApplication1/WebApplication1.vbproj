@@ -162,11 +162,12 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Frontend\AdminMonitor.aspx" />
     <Content Include="Frontend\FromQeations.aspx" />
     <Content Include="Frontend\Home.aspx" />
     <Content Include="imge\Logo01.png" />
     <Content Include="Login.aspx" />
-    <Content Include="Frontend\MonitorTLS.aspx" />
+    <Content Include="Frontend\EmailMonitorTLS.aspx" />
     <Content Include="Frontend\ProfilePage.aspx" />
     <Content Include="Frontend\RestingPage.aspx" />
     <Content Include="Frontend\SendEmailFrom.aspx" />
@@ -278,6 +279,13 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\AdminMonitor.aspx.designer.vb">
+      <DependentUpon>AdminMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\AdminMonitor.aspx.vb">
+      <DependentUpon>AdminMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Frontend\FromQeations.aspx.designer.vb">
       <DependentUpon>FromQeations.aspx</DependentUpon>
     </Compile>
@@ -299,11 +307,11 @@
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Frontend\MonitorTLS.aspx.designer.vb">
-      <DependentUpon>MonitorTLS.aspx</DependentUpon>
+    <Compile Include="Frontend\EmailMonitorTLS.aspx.designer.vb">
+      <DependentUpon>EmailMonitorTLS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\MonitorTLS.aspx.vb">
-      <DependentUpon>MonitorTLS.aspx</DependentUpon>
+    <Compile Include="Frontend\EmailMonitorTLS.aspx.vb">
+      <DependentUpon>EmailMonitorTLS.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Frontend\ProfilePage.aspx.designer.vb">

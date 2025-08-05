@@ -1,8 +1,9 @@
-﻿Imports System.Data.SqlClient
-Imports System.Net
-Imports System.Net.Mail
+﻿
+Imports System.Data.SqlClient
+    Imports System.Net
+    Imports System.Net.Mail
 
-Public Class SummeryTLS
+Public Class AdminMonitor
     Inherits System.Web.UI.Page
     Dim connStr As String = "Data Source=VMWEBSERVER;Initial Catalog=SupplyChain;Persist Security Info=True;User ID=SupplyChain;Password=9999"
 
@@ -10,12 +11,10 @@ Public Class SummeryTLS
         Dim dt As New DataTable()
         Using conn As New SqlConnection(connStr)
             conn.Open()
-            Dim cmd As New SqlCommand("SELECT TOP (1000) [TlsID], [TlsYear], [Supplierid], [SupplierCode], [DateCreate], 
-                                  [Response], [DateResponse], [Buyer], [BuyerName], [ByUsr], [DateUpload], 
-                                  [FlagSentEmail], [SentEmailDatetime], [UnitSentEmail], [FlagRead], 
-                                  [DateRead], [Remark], [FlagConfirm], [FileDocCommitment], [FlagCompleted], 
-                                  [FlagPrint] 
-                                  FROM [SupplyChain].[dbo].[PSR_T_Tls]", conn)
+            Dim cmd As New SqlCommand("SELECT TOP (1000) [SupplierID], [SupplierName], [SupplierName2], [Address], [Tel], 
+                                  [Email], [IDTax], [SupplierCode], [CordinatorName], [FlagReady], [Fax], 
+                                  [FlagIntranet], [Supplier_Remark] 
+                                  FROM [SupplyChain].[dbo].[PSR_T_Supplier]", conn)
             Dim da As New SqlDataAdapter(cmd)
             da.Fill(dt)
         End Using
@@ -71,3 +70,4 @@ Public Class SummeryTLS
         txtSearchFrom.Text = ""
     End Sub
 End Class
+
