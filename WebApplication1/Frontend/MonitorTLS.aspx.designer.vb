@@ -77,13 +77,13 @@ Partial Public Class MonitorTLS
     Protected WithEvents txtSubject As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtBody control.
+    '''litBody control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtBody As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents litBody As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''rptAttachments control.
@@ -93,6 +93,15 @@ Partial Public Class MonitorTLS
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rptAttachments As Global.System.Web.UI.WebControls.Repeater
+
+    '''<summary>
+    '''txtBody control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtBody As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnClose control.

@@ -1,8 +1,33 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master/FromMaster.Master" CodeBehind="MonitorTLS.aspx.vb" Inherits="WebApplication1.MonitorTLS" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
+        <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+       
 
+        window.onload = function () {
+            CKEDITOR.replace('<%= txtBody.ClientID %>', {
+                height: 200,
+
+            });
+        };
+        function syncCKEditor() {
+            for (var instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        }
+
+    </script>
+    <style>
+    .marker {
+        background-color: yellow; 
+  
+    }
+</style>
+    <style>
+        .cke_notifications_area {
+            display: none;
+        }
         .text-wid {
             width: 350px;
             height: auto;
@@ -142,8 +167,9 @@
             border-radius: 12px;
             padding: 16px;
             font-size: 15px;
-            max-height:150px;
-            
+            max-height:255px;
+            overflow:auto;
+            height:auto;
             line-height: 1.6;
             color: #4b5563;
             transition: all 0.2s ease;
@@ -533,35 +559,47 @@
     <asp:Panel ID="pnlPopup" runat="server" CssClass="popupstatus bg-white" Visible="False">
         <div class="popup-body">
             <asp:HiddenField ID="hdnMailID" runat="server" />
-            <div class="field-group">
-                <div class="field-label">📝 หัวเรื่อง</div>
-                <div class="field-content">
-                    <asp:TextBox ID="txtSubject" runat="server" CssClass="form-controls " />
+            <div class="  d-flex gap-5">
+            <div>
+                <div class="field-group">
+                    <div class="field-label">📝 หัวเรื่อง</div>
+                    <div class="field-content">
+                        <asp:TextBox ID="txtSubject" runat="server" CssClass="form-controls  "  Rows="10" Columns="80" ValidateRequest="false" />
+                    </div>
+
                 </div>
-                
+
+                <div class="field-group">
+                    <div class="field-label">💬 รายละเอียด</div>
+                    <div class="field-content">
+                        <asp:Literal ID="litBody" runat="server"></asp:Literal>
+                    </div>
+
+                </div>
+
+
+                <div class="field-group">
+                    <div class="field-label">📎 ไฟล์แนบ</div>
+                    <asp:Repeater ID="rptAttachments" runat="server">
+                        <ItemTemplate>
+                            <div class="file-item">
+                                <div class="file-icon">📄</div>
+                                <div class="file-info">
+                                    <div class="file-name"><%# Eval("FileName") %></div>
+                                    <div class="file-size"><%# Eval("FileSize") %></div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
             </div>
 
             <div class="field-group">
-                <div class="field-label">💬 รายละเอียด</div>
-                <div class="field-content">
+                <div class="field-label">💬 แก้ไข</div>
+                <div class="">
                     <asp:TextBox ID="txtBody" runat="server" CssClass="form-controls" TextMode="MultiLine" Rows="5" />
                 </div>
-                
             </div>
-
-            <div class="field-group">
-                <div class="field-label">📎 ไฟล์แนบ</div>
-                <asp:Repeater ID="rptAttachments" runat="server">
-                    <ItemTemplate>
-                        <div class="file-item">
-                            <div class="file-icon">📄</div>
-                            <div class="file-info">
-                                <div class="file-name"><%# Eval("FileName") %></div>
-                                <div class="file-size"><%# Eval("FileSize") %></div>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
             </div>
 
             <div class="action-buttons">

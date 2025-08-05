@@ -29,9 +29,8 @@ Public Class SendEmailFrom
     End Sub
 
     Protected Sub btnSend_Click(sender As Object, e As EventArgs)
-        Dim recipient As String = txtRecipient.Text.Trim()
         Dim subject As String = txtSubject.Text.Trim()
-        Dim body As String = txtBody.Text.Trim()
+        Dim body As String = txtBody.Text ' ได้ค่า HTML จาก CKEditor
 
         Using conn As New SqlConnection(connStr)
             conn.Open()
@@ -45,13 +44,10 @@ Public Class SendEmailFrom
             cmd.ExecuteNonQuery()
         End Using
 
-        ' ถ้ามี GridView ให้รีเฟรช
-        ' BindMailFormatGrid()
+        ' ล้างฟอร์ม
         txtRecipient.Text = ""
         txtSubject.Text = ""
         txtBody.Text = ""
-
-        ' แสดง popup สำเร็จ (ใช้ JS หรือ ASP.NET Popup ตามที่คุณมี)
-        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showPopup", "showSuccessPopup();", True)
+        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showPopup", "showSuccessPopup();resetForm();", True)
     End Sub
 End Class

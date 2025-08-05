@@ -12,6 +12,10 @@ Public Class MonitorTLS
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             BindMailFormatGrid()
+
+            'If Session("MailBody") IsNot Nothing Then
+            '    litBody.Text = Server.HtmlDecode(Session("MailBody").ToString())
+            'End If
         End If
     End Sub
 
@@ -68,10 +72,12 @@ Public Class MonitorTLS
                 txtSubject.Text = reader("Subject").ToString()
                 txtBody.Text = reader("Body").ToString()
                 hdnMailID.Value = mailID.ToString()
+                Dim body As String = reader("Body").ToString()
+                litBody.Text = Server.HtmlDecode(body)
             End If
             reader.Close()
 
-            ' Load Attachments
+
             Dim dtAttach As New DataTable()
             Dim cmdAttach As New SqlCommand("SELECT File_name AS FileName FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
             cmdAttach.Parameters.AddWithValue("@MailID", mailID)

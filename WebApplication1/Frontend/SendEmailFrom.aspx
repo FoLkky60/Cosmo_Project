@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SendEmailFrom.aspx.vb" Inherits="WebApplication1.SendEmailFrom" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="SendEmailFrom.aspx.vb" Inherits="WebApplication1.SendEmailFrom" %>
 
 <!DOCTYPE html>
 
@@ -6,6 +6,21 @@
 <head runat="server">
     <title></title>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+        window.onload = function () {
+            CKEDITOR.replace('<%= txtBody.ClientID %>', {
+                height: 200,
+
+            });
+        };
+        function syncCKEditor() {
+            for (var instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        }
+
+    </script>
 
     <style>
         * {
@@ -24,7 +39,9 @@
             align-items: center;
             justify-content: center;
         }
-
+        .cke_notifications_area {
+            display: none;
+        }
         .email-container {
             background: #ffffff;
             border-radius: 24px;
@@ -402,7 +419,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">ข้อความ (Message)</label>
-                    <asp:TextBox ID="txtBody" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" required="true" />
+                    <asp:TextBox ID="txtBody" runat="server" TextMode="MultiLine" Rows="10" Columns="80" ValidateRequest="false"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label>แนบไฟล์</label>
@@ -436,7 +453,7 @@
                 </div>               
               
 
-                   <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" />
+                   <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" OnClientClick="syncCKEditor();" />
 
 
             </form>
