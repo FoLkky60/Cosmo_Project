@@ -587,6 +587,8 @@
                                 <div class="file-info">
                                     <div class="file-name"><%# Eval("FileName") %></div>
                                     <div class="file-size"><%# Eval("FileSize") %></div>
+                                    <asp:Literal ID="litFileContent" runat="server" />
+                                    <asp:Image ID="imgFile" runat="server" Visible="false" />
                                 </div>
                             </div>
                         </ItemTemplate>

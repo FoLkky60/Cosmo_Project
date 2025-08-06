@@ -4987,24 +4987,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.SendEmailFrom._FileUpload1">
-<summary>
-FileUpload1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.SendEmailFrom._fuImage">
-<summary>
-fuImage control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication1.SendEmailFrom._btnSend">
 <summary>
 btnSend control.
