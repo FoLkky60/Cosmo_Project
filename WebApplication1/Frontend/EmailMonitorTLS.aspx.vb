@@ -73,9 +73,9 @@ Public Class MonitorTLS
             End If
             reader.Close()
 
-
+            ' Load Attachments based on MailID
             Dim dtAttach As New DataTable()
-            Dim cmdAttach As New SqlCommand("SELECT File_name AS FileName FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
+            Dim cmdAttach As New SqlCommand("SELECT File_name AS FileName, Files_link AS FileLink FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
             cmdAttach.Parameters.AddWithValue("@MailID", mailID)
             Dim da As New SqlDataAdapter(cmdAttach)
             da.Fill(dtAttach)
@@ -83,13 +83,15 @@ Public Class MonitorTLS
             ' Add FileSize column (mocked)
             dtAttach.Columns.Add("FileSize")
             For Each row As DataRow In dtAttach.Rows
-                row("FileSize") = "2.4 MB"
+                row("FileSize") = "2.4 MB" ' Mocked value, you can calculate it dynamically if needed
             Next
 
+            ' Bind attachments to the Repeater
             rptAttachments.DataSource = dtAttach
             rptAttachments.DataBind()
         End Using
     End Sub
+
     Protected Sub GridViewMailFormat_RowCommand(sender As Object, e As GridViewCommandEventArgs)
         If e.CommandName = "ViewMail" Then
             Dim mailId As Integer = Convert.ToInt32(e.CommandArgument)

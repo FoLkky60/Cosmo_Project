@@ -161,6 +161,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FileUpload\Screenshot 2025-07-22 115341.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Frontend\AdminMonitor.aspx" />
     <Content Include="Frontend\FromQeations.aspx" />
@@ -242,6 +243,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="style\Emailmonitor.css" />
     <Content Include="style\EmaiUserFrom.css" />
     <Content Include="style\followPage.css" />
     <Content Include="style\home.css" />
@@ -426,7 +428,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="FileUpload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
