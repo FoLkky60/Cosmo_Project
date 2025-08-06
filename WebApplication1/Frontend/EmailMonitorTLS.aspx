@@ -55,7 +55,6 @@
     </script>
 
 
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="min-vh-100 p-3 ">
@@ -80,60 +79,22 @@
                             <div class="d-flex flex-wrap gap-3 p-2 overflow-auto ">
                                 <div class="col ">
                                     <div class="d-flex w-100">
-                                        <%-- <div class="">
-                                            <asp:DropDownList ID="ddlSearchType" runat="server" CssClass="search-dropdown ">
-                                                <asp:ListItem Text="All" Value="All" />
-                                                <asp:ListItem Text="Name" Value="Seller" />
-                                                <asp:ListItem Text="ID" Value="SupplierId" />
-                                            </asp:DropDownList>
-                                        </div>--%>
-
                                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true"
                                             EmptyDataText="No data found. Please try again with a different keyword."
                                             CssClass="gridview-class">
                                         </asp:GridView>
-
-<%--                                        <asp:TextBox ID="txtKeyword" runat="server" CssClass="searchbox px-4" AutoPostBack="true"
-                                            OnTextChanged="txtKeyword_TextChanged" placeholder="Search..." />--%>
-
                                     </div>
                                 </div>
-                                <%--<div>                                  
-                                    <asp:Button ID="btnKeywordSearch" runat="server" Text="Search" CssClass="print-box" OnClick="btnKeywordSearch_Click" />
-                                </div>--%>
 
-                                <%--<div>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" CssClass="dropdown-box dropdown-toggle">
-                                        <asp:ListItem Text="All" Value="All"></asp:ListItem>
-                                        <asp:ListItem Text="Buyer 1" Value="Buyer 1"></asp:ListItem>
-                                        <asp:ListItem Text="Buyer 2" Value="Buyer 2"></asp:ListItem>
-                                        <asp:ListItem Text="Buyer 3" Value="Buyer 3"></asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>--%>
-
-                                <%--<div class="">
-                                    <div class=" d-flex gap-2">
-                                        <div class="">
-                                            <asp:TextBox ID="txtDateStart" runat="server" TextMode="Date" CssClass="search-calender"
-                                                AutoPostBack="true" OnTextChanged="DateFilter_Changed" />
-                                        </div>
-                                        <div class="">
-                                            <asp:TextBox ID="txtDateEnd" runat="server" TextMode="Date" CssClass="search-calender"
-                                                AutoPostBack="true" OnTextChanged="DateFilter_Changed" />
-                                        </div>
-                                    </div>
-
-                                </div>--%>
-
-                                <div>
-                                    <asp:Button ID="Button2" runat="server" Text="Print" class="print-box" OnClientClick="openPopup(); return false;" />
-                                   <%-- <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="print-box" OnClick="btnClear_Click" />--%>
-                                </div>
+                                
 
                             </div>
                         </div>
                     </div>
                 </div>
+                <a href="SendEmailFrom" class=" d-flex justify-content-end  cursor-pointer m-2" > 
+                                    <iconify-icon icon="zondicons:add-solid" width="50" height="50"></iconify-icon>
+                                </a>
                 <div class="w-100 overflow-auto mw shadowcustom bg-white">
                     <asp:GridView ID="GridViewMailFormat" runat="server" AutoGenerateColumns="False"
                         Width="100%"
@@ -173,40 +134,6 @@
                 </div>
 
             </div>
-        </div>
-    </div>
-
-    <div id="overlay" class="overlay" onclick="closePopup()"></div>
-    <div id="popup" class="popup">
-        <div class=" d-flex justify-content-center flex-column gap-4">
-            <iconify-icon class=" d-flex justify-content-end" icon="carbon:close-outline" width="32" height="32" onclick="closePopup()"></iconify-icon>
-            <div class="dropdown-item-container  d-flex align-items-center gap-2">
-                <div>Year</div>
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sort
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="dropdown-item-container d-flex align-items-center gap-2">
-                <div>Divisioms</div>
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sort
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-            </div>
-            <asp:Button CssClass="" ID="Button1" runat="server" Text="Button" />
         </div>
     </div>
 
