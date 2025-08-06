@@ -235,19 +235,19 @@
 
                 <div class="field-group">
                     <div class="field-label">📎 ไฟล์แนบ</div>
-                   <asp:Repeater ID="rptAttachments" runat="server">
-    <ItemTemplate>
-        <div class="file-item">
-            <div class="file-icon">📄</div>
-            <div class="file-info">
-                <div class="file-name">
-                    <a href='<%# Eval("FileLink") %>' target="_blank"><%# Eval("FileName") %></a>
-                </div>
-                <div class="file-size"><%# Eval("FileSize") %></div>
-            </div>
-        </div>
-    </ItemTemplate>
-</asp:Repeater>
+                    <asp:Repeater ID="rptAttachments" runat="server">
+                        <ItemTemplate>
+                            <div class="file-item">
+                                <div class="file-icon">📄</div>
+                                <div class="file-info">
+                                    <div class="file-name">
+                                        <a href='<%# Eval("FileLink") %>' target="_blank"><%# Eval("FileName") %></a>
+                                    </div>
+                                    <div class="file-size"><%# Eval("FileSize") %></div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
 
                 </div>
             </div>
