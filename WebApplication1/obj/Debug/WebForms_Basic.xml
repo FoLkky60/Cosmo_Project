@@ -37,504 +37,27 @@ WebApplication1
  Returns the Asp log object.
  </summary>
 </member>
-<member name="F:WebApplication1.ManageSupplier._ScriptManager2">
+<member name="F:WebApplication1.AdminMonitor._txtSearchFrom">
 <summary>
-ScriptManager2 control.
+txtSearchFrom control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ManageSupplier._UpdatePanel1">
+<member name="F:WebApplication1.AdminMonitor._Button2">
 <summary>
-UpdatePanel1 control.
+Button2 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ManageSupplier._btn_NewSupplier">
+<member name="F:WebApplication1.AdminMonitor._GridView1">
 <summary>
-btn_NewSupplier control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._btn_ChangePw">
-<summary>
-btn_ChangePw control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._FormSearch">
-<summary>
-FormSearch control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._ddl_typeSearch">
-<summary>
-ddl_typeSearch control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_searchSupplier">
-<summary>
-txt_searchSupplier control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._btn_copy_Ora">
-<summary>
-btn_copy_Ora control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._FormDetail">
-<summary>
-FormDetail control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._hdf_supplierID">
-<summary>
-hdf_supplierID control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._hdf_FormStatus">
-<summary>
-hdf_FormStatus control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._lbl_form_sta">
-<summary>
-lbl_form_sta control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_SupplierCode">
-<summary>
-txt_SupplierCode control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_SupplierName">
-<summary>
-txt_SupplierName control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_SupplierNameTax">
-<summary>
-txt_SupplierNameTax control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_CordinatorName">
-<summary>
-txt_CordinatorName control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_IDTax">
-<summary>
-txt_IDTax control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._ddl_status">
-<summary>
-ddl_status control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._lbl_form_sta2">
-<summary>
-lbl_form_sta2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_Address">
-<summary>
-txt_Address control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_Phone">
-<summary>
-txt_Phone control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_Fax">
-<summary>
-txt_Fax control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_Email">
-<summary>
-txt_Email control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_Usrname">
-<summary>
-txt_Usrname control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._txt_PW">
-<summary>
-txt_PW control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._FormSave">
-<summary>
-FormSave control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._btn_Save">
-<summary>
-btn_Save control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._btn_Cancel">
-<summary>
-btn_Cancel control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._grid">
-<summary>
-grid control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._SqlDataSourceTab1">
-<summary>
-SqlDataSourceTab1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageSupplier._btn_ResetPW">
-<summary>
-btn_ResetPW control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._ScriptManager2">
-<summary>
-ScriptManager2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._UpdatePanel1">
-<summary>
-UpdatePanel1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._btn_NewUser">
-<summary>
-btn_NewUser control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._FormDetail">
-<summary>
-FormDetail control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._hdf_userID">
-<summary>
-hdf_userID control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._hdf_FormStatus">
-<summary>
-hdf_FormStatus control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_form_sta">
-<summary>
-lbl_form_sta control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_FullnameT">
-<summary>
-lbl_FullnameT control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_FnameT">
-<summary>
-txt_FnameT control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_LnameT">
-<summary>
-txt_LnameT control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_FnameE">
-<summary>
-lbl_FnameE control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_FnameE">
-<summary>
-txt_FnameE control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_PositionT">
-<summary>
-lbl_PositionT control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_PositionT">
-<summary>
-txt_PositionT control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_Phone">
-<summary>
-lbl_Phone control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_Phone">
-<summary>
-txt_Phone control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_Usrname">
-<summary>
-lbl_Usrname control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_Usrname">
-<summary>
-txt_Usrname control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._lbl_PW">
-<summary>
-lbl_PW control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._txt_PW">
-<summary>
-txt_PW control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._ddl_status">
-<summary>
-ddl_status control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._btn_Save">
-<summary>
-btn_Save control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._btn_Cancel">
-<summary>
-btn_Cancel control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._grid">
-<summary>
-grid control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ManageUser._SqlDataSourceTab1">
-<summary>
-SqlDataSourceTab1 control.
+GridView1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -5302,42 +4825,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._txtKeyword">
-<summary>
-txtKeyword control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._DropDownList1">
-<summary>
-DropDownList1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._txtDateStart">
-<summary>
-txtDateStart control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._txtDateEnd">
-<summary>
-txtDateEnd control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication1.MonitorTLS._Button2">
 <summary>
 Button2 control.
@@ -5347,18 +4834,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.MonitorTLS._btnClear">
+<member name="F:WebApplication1.MonitorTLS._GridViewMailFormat">
 <summary>
-btnClear control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.MonitorTLS._GridView1">
-<summary>
-GridView1 control.
+GridViewMailFormat control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -5368,6 +4846,87 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication1.MonitorTLS._Button1">
 <summary>
 Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._pnlPopup">
+<summary>
+pnlPopup control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._hdnMailID">
+<summary>
+hdnMailID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._txtSubject">
+<summary>
+txtSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._litBody">
+<summary>
+litBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._rptAttachments">
+<summary>
+rptAttachments control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._txtBody">
+<summary>
+txtBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._btnClose">
+<summary>
+btnClose control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._btnDelete">
+<summary>
+btnDelete control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._btnSave">
+<summary>
+btnSave control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -5386,6 +4945,69 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication1.SendEmailFrom._emailForm">
 <summary>
 emailForm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._txtRecipient">
+<summary>
+txtRecipient control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._txtSubject">
+<summary>
+txtSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._txtBody">
+<summary>
+txtBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._fuFile">
+<summary>
+fuFile control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._FileUpload1">
+<summary>
+FileUpload1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._fuImage">
+<summary>
+fuImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.SendEmailFrom._btnSend">
+<summary>
+btnSend control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -1,10 +1,27 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SendEmailFrom.aspx.vb" Inherits="WebApplication1.SendEmailFrom" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="SendEmailFrom.aspx.vb" Inherits="WebApplication1.SendEmailFrom" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+        window.onload = function () {
+            CKEDITOR.replace('<%= txtBody.ClientID %>', {
+                height: 200,
+
+            });
+        };
+        function syncCKEditor() {
+            for (var instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        }
+
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -22,12 +39,13 @@
             align-items: center;
             justify-content: center;
         }
-
+        .cke_notifications_area {
+            display: none;
+        }
         .email-container {
             background: #ffffff;
             border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(6, 91, 167, 0.12), 
-                        0 2px 8px rgba(6, 91, 167, 0.08);
+            box-shadow: 0 8px 32px rgba(6, 91, 167, 0.12), 0 2px 8px rgba(6, 91, 167, 0.08);
             width: 100%;
             max-width: 480px;
             overflow: hidden;
@@ -42,18 +60,18 @@
             position: relative;
         }
 
-        .header h1 {
-            font-size: 22px;
-            margin-bottom: 6px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
+            .header h1 {
+                font-size: 22px;
+                margin-bottom: 6px;
+                font-weight: 600;
+                letter-spacing: -0.5px;
+            }
 
-        .header p {
-            opacity: 0.92;
-            font-size: 14px;
-            font-weight: 400;
-        }
+            .header p {
+                opacity: 0.92;
+                font-size: 14px;
+                font-weight: 400;
+            }
 
         .form-container {
             padding: 28px 32px 32px;
@@ -87,13 +105,13 @@
             font-family: inherit;
         }
 
-        input[type="email"]:focus,
-        input[type="text"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #065ba7;
-            box-shadow: 0 0 0 3px rgba(6, 91, 167, 0.08);
-        }
+            input[type="email"]:focus,
+            input[type="text"]:focus,
+            textarea:focus {
+                outline: none;
+                border-color: #065ba7;
+                box-shadow: 0 0 0 3px rgba(6, 91, 167, 0.08);
+            }
 
         textarea {
             resize: vertical;
@@ -119,10 +137,10 @@
             width: 100%;
         }
 
-        .file-input input[type="file"] {
-            position: absolute;
-            left: -9999px;
-        }
+            .file-input input[type="file"] {
+                position: absolute;
+                left: -9999px;
+            }
 
         .file-input-label {
             display: flex;
@@ -140,12 +158,12 @@
             font-size: 13px;
         }
 
-        .file-input-label:hover {
-            background: #065ba7;
-            color: white;
-            border-color: #065ba7;
-            border-style: solid;
-        }
+            .file-input-label:hover {
+                background: #065ba7;
+                color: white;
+                border-color: #065ba7;
+                border-style: solid;
+            }
 
         .file-preview {
             margin-top: 10px;
@@ -165,7 +183,7 @@
         }
 
         .add-link-btn {
-            background-color:white;
+            background-color: white;
             color: black;
             border: none;
             border-radius: 12px;
@@ -193,14 +211,14 @@
             border: 1px solid #e9ecef;
         }
 
-        .link-item a {
-            color: #065ba7;
-            text-decoration: none;
-            font-weight: 500;
-            word-break: break-all;
-            flex: 1;
-            margin-right: 12px;
-        }
+            .link-item a {
+                color: #065ba7;
+                text-decoration: none;
+                font-weight: 500;
+                word-break: break-all;
+                flex: 1;
+                margin-right: 12px;
+            }
 
         .remove-link {
             background: #ef4444;
@@ -228,13 +246,13 @@
             letter-spacing: -0.2px;
         }
 
-        .send-btn:hover {
-            background: #054a91;
-        }
+            .send-btn:hover {
+                background: #054a91;
+            }
 
-        .send-btn:active {
-            transform: scale(0.98);
-        }
+            .send-btn:active {
+                transform: scale(0.98);
+            }
 
         /* Popup Styles */
         .popup-overlay {
@@ -256,8 +274,7 @@
             padding: 25px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
-                        0 0 0 1px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
             max-width: 350px;
             width: 90%;
             animation: popupShow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -269,6 +286,7 @@
                 transform: scale(0.5) translateY(50px);
                 opacity: 0;
             }
+
             to {
                 transform: scale(1) translateY(0);
                 opacity: 1;
@@ -283,9 +301,17 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
 
         .popup h2 {
@@ -313,88 +339,110 @@
             box-shadow: 0 3px 10px rgba(6, 91, 167, 0.3);
         }
 
-        .popup-close:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(6, 91, 167, 0.4);
-        }
+            .popup-close:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(6, 91, 167, 0.4);
+            }
 
         @media (max-width: 768px) {
             body {
                 padding: 5px;
             }
-            
+
             .email-container {
                 max-width: 100%;
                 margin: 5px auto;
             }
-            
+
             .file-input-group {
                 flex-direction: column;
             }
-            
+
             .link-input-group {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .form-container {
                 padding: 15px 20px;
             }
-            
+
             .header {
                 padding: 15px 20px;
             }
-            
-            .header h1 {
-                font-size: 18px;
-            }
-            
-            .header p {
-                font-size: 12px;
-            }
+
+                .header h1 {
+                    font-size: 18px;
+                }
+
+                .header p {
+                    font-size: 12px;
+                }
+        }
+
+        .overflows {
+            width: 500px;
+            overflow: auto;
+        }
+        .contain {
+            display:flex;
+            justify-content:start;
+            align-items:start;
+            cursor:pointer;
+            outline:none;
+            text-decoration:none;
+            border:none;
+            color:white;
         }
     </style>
 </head>
 <body>
+
     <div class="email-container">
         <div class="header">
+            <a href="Home.aspx" class="contain">
+                <span class="iconify" data-icon="ic:baseline-arrow-back" data-width="24" data-height="24"></span> 
+            </a>
             <h1>📧 ส่ง Email</h1>
             <p>เขียนข้อความและแนบไฟล์ได้อย่างง่ายดาย</p>
         </div>
-        
+
         <div class="form-container">
-            <form id="emailForm" runat="server">
+            <form id="emailForm" runat="server" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="recipient">ผู้รับ (To)</label>
-                    <input type="email" id="recipient" name="recipient" placeholder="example@email.com" required/>
+                    <asp:TextBox ID="txtRecipient" runat="server" CssClass="form-control" required="true" />
                 </div>
-                
                 <div class="form-group">
                     <label for="subject">หัวข้อ (Subject)</label>
-                    <input type="text" id="subject" name="subject" placeholder="หัวข้อของอีเมล" required/>
+                    <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control" required="true" />
                 </div>
-                
                 <div class="form-group">
                     <label for="message">ข้อความ (Message)</label>
-                    <textarea id="message" name="message" placeholder="เขียนข้อความของคุณที่นี่..." required/></textarea>
+                    <asp:TextBox ID="txtBody" runat="server" TextMode="MultiLine" Rows="10" Columns="80" ValidateRequest="false"></asp:TextBox>
                 </div>
-                
+                <div class="form-group">
+                    <label>แนบไฟล์</label>
+                    <asp:FileUpload ID="fuFile" runat="server" AllowMultiple="true" />
+                </div>
+            
+
                 <div class="form-group">
                     <label>แนบไฟล์</label>
                     <div class="file-input-group">
                         <div class="file-input-wrapper">
                             <div class="file-input">
-                                <input type="file" id="fileAttachment" name="fileAttachment" multiple/>
+                                <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="true" />
                                 <label for="fileAttachment" class="file-input-label">
                                     📎 เลือกไฟล์
                                 </label>
                             </div>
                             <div class="file-preview" id="filePreview"></div>
                         </div>
-                        
+
                         <div class="file-input-wrapper">
                             <div class="file-input">
-                                <input type="file" id="imageAttachment" name="imageAttachment" accept="image/*" multiple/>
+                                <asp:FileUpload ID="fuImage" runat="server" AllowMultiple="true" accept="image/*" />
                                 <label for="imageAttachment" class="file-input-label">
                                     🖼️ เลือกรูปภาพ
                                 </label>
@@ -402,24 +450,21 @@
                             <div class="file-preview" id="imagePreview"></div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>เพิ่มลิงค์</label>
-                    <div class="link-input-group">
-                        <input type="url" id="linkInput" placeholder="https://example.com"/>
-                        <button type="button" class="add-link-btn" onclick="addLink()">เพิ่ม</button>
-                    </div>
-                    <div class="links-list" id="linksList"></div>
-                </div>
-                
-                <button type="submit" class="send-btn">
-                    📤 ส่งอีเมล
-                </button>
+                </div>               
+              
+
+                   <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" OnClientClick="syncCKEditor();" />
+
+
             </form>
         </div>
+
+
     </div>
-    
+
+
+
+
     <!-- Success Popup -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup">
@@ -497,22 +542,28 @@
         }
 
         // Form submission
-        document.getElementById('emailForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        //document.getElementById('emailForm').addEventListener('submit', function (e) {
+        //    e.preventDefault();
 
-            // Simulate sending email
-            setTimeout(() => {
-                showSuccessPopup();
-                resetForm();
-            }, 1000);
-        });
+           
+        //    setTimeout(() => {
+        //        showSuccessPopup();
+        //        resetForm();
+        //    }, 1000);
+        //});
 
         function showSuccessPopup() {
             document.getElementById('popupOverlay').style.display = 'flex';
+            // รีเฟรชหน้าหลัง 1.5 วินาที (หรือหลัง popup โชว์)
+            setTimeout(function () {
+                window.location.reload();
+            }, 1500);
         }
 
+        // หรือถ้าต้องการรีเฟรชเมื่อกดปุ่ม "ตกลง"
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
+            window.location.reload();
         }
 
         function resetForm() {

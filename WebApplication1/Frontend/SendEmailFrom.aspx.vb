@@ -1,41 +1,53 @@
-﻿Imports System.Net
+﻿
+Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Net.Mail
 
 Public Class SendEmailFrom
     Inherits System.Web.UI.Page
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ' คุณสามารถใส่โค้ดเพิ่มเติมที่ต้องการให้ทำงานในหน้าเว็บเมื่อโหลด
+    Dim connStr As String = "Data Source=VMWEBSERVER;Initial Catalog=SupplyChain;Persist Security Info=True;User ID=SupplyChain;Password=9999"
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            ' ถ้ามี GridView ให้ Bind ที่นี่
+            ' BindMailFormatGrid()
+        End If
     End Sub
 
-    ' ฟังก์ชันส่งอีเมล
-    Public Function SendEmail(ByVal recipient As String, ByVal subject As String, ByVal message As String) As Boolean
-        Try
-            ' กำหนดอีเมลผู้ส่งเป็นของคุณ
-            Dim senderEmail As String = "your-email@example.com"
+    ' ตัวอย่างฟังก์ชันสำหรับ Bind GridView (ถ้ามี)
+    Private Sub BindMailFormatGrid()
+        Dim dt As New DataTable()
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy)", conn)
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+        End Using
+        ' GridViewMailFormat.DataSource = dt
+        ' GridViewMailFormat.DataBind()
+    End Sub
 
-            ' สร้าง MailMessage
-            Dim mail As New MailMessage()
-            mail.From = New MailAddress(senderEmail) ' อีเมลผู้ส่งที่ฟิกไว้
-            mail.To.Add(recipient) ' รับอีเมลผู้รับจากฟอร์ม
-            mail.Subject = subject
-            mail.Body = message
+    Protected Sub btnSend_Click(sender As Object, e As EventArgs)
+        Dim subject As String = txtSubject.Text.Trim()
+        Dim body As String = txtBody.Text ' ได้ค่า HTML จาก CKEditor
 
-            ' ตั้งค่า SMTP Server
-            Dim smtpServer As New SmtpClient("smtp.example.com")
-            smtpServer.Port = 587
-            smtpServer.Credentials = New NetworkCredential(senderEmail, "your-email-password") ' ใช้อีเมลผู้ส่งและรหัสผ่านของคุณ
-            smtpServer.EnableSsl = True
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy)", conn)
+            cmd.Parameters.AddWithValue("@Type_Mail", 1)
+            cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year)
+            cmd.Parameters.AddWithValue("@Subject", subject)
+            cmd.Parameters.AddWithValue("@Body", body)
+            cmd.Parameters.AddWithValue("@Status", "Pending")
+            cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+            cmd.ExecuteNonQuery()
+        End Using
 
-            ' ส่งอีเมล
-            smtpServer.Send(mail)
-            Return True
-        Catch ex As Exception
-            ' บันทึกข้อผิดพลาด
-            Console.WriteLine("Error: " & ex.Message)
-            Return False
-        End Try
-    End Function
-
-
+        ' ล้างฟอร์ม
+        txtRecipient.Text = ""
+        txtSubject.Text = ""
+        txtBody.Text = ""
+        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showPopup", "showSuccessPopup();resetForm();", True)
+    End Sub
 End Class
