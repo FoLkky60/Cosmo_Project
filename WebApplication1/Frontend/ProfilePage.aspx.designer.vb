@@ -32,103 +32,76 @@ Partial Public Class ProfilePage
     Protected WithEvents LiteralName As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralRole control.
+    '''UserType control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralRole As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents UserType As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralFullName control.
+    '''FullNameProfile control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralFullName As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents FullNameProfile As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralEmployeeID control.
+    '''IDTax control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralEmployeeID As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents IDTax As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralEmail control.
+    '''Email control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralEmail As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents Email As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralPhone control.
+    '''Tel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralPhone As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents Tel As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralDepartment control.
+    '''Fax control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralDepartment As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents Fax As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralCompany control.
+    '''FlagReady control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralCompany As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents FlagReady As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralPosition control.
+    '''Address control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralPosition As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
-    '''LiteralStartDate control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LiteralStartDate As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
-    '''LiteralSalaryLevel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LiteralSalaryLevel As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
-    '''LiteralWorkStatus control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LiteralWorkStatus As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents Address As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''LiteralWorkDays control.

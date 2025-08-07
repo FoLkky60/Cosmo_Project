@@ -5437,72 +5437,72 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralRole">
+<member name="F:WebApplication1.ProfilePage._UserType">
 <summary>
-LiteralRole control.
+UserType control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralFullName">
+<member name="F:WebApplication1.ProfilePage._FullNameProfile">
 <summary>
-LiteralFullName control.
+FullNameProfile control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralEmployeeID">
+<member name="F:WebApplication1.ProfilePage._IDTax">
 <summary>
-LiteralEmployeeID control.
+IDTax control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralEmail">
+<member name="F:WebApplication1.ProfilePage._Email">
 <summary>
-LiteralEmail control.
+Email control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralPhone">
+<member name="F:WebApplication1.ProfilePage._Tel">
 <summary>
-LiteralPhone control.
+Tel control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralDepartment">
+<member name="F:WebApplication1.ProfilePage._Fax">
 <summary>
-LiteralDepartment control.
+Fax control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralCompany">
+<member name="F:WebApplication1.ProfilePage._FlagReady">
 <summary>
-LiteralCompany control.
+FlagReady control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralPosition">
+<member name="F:WebApplication1.ProfilePage._Address">
 <summary>
-LiteralPosition control.
+Address control.
 </summary>
 <remarks>
 Auto-generated field.

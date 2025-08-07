@@ -84,10 +84,9 @@ Public Class MonitorTLS
             ' Add FileSize column (mocked)
             dtAttach.Columns.Add("FileSize")
             For Each row As DataRow In dtAttach.Rows
-                row("FileSize") = "2.4 MB" ' Mocked value, you can calculate it dynamically if needed
+                row("FileSize") = "2.4 MB"
             Next
 
-            ' Bind attachments to the Repeater
             rptAttachments.DataSource = dtAttach
             rptAttachments.DataBind()
         End Using

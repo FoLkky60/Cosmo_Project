@@ -19,28 +19,39 @@ Public Class ProfilePage
         Using connect As New SqlConnection(connStr)
             connect.Open()
 
-            Dim cmd As New SqlCommand("SELECT TOP 1000 ID, Usrname, PW, UsrType, Detail, Supplierid, FNameT, FNameE, PositionT, Tel, FlagActive, FlagSupplierPull, LNameT, PersonCode, UserRemark 
-                          FROM SupplyChain.dbo.PSR_M_User 
-                          WHERE UserID = @UserID 
-                            AND Usrname = @Usrname 
-                            AND Detail = @Detail 
-                            AND Supplierid = @Supplierid 
-                            AND FNameT = @FNameT
-                            AND FNameE = @FNameE
-                            AND PositionT = @PositionT", connect)
+            Dim cmd As New SqlCommand("SELECT 
+                                U.Detail, 
+                                U.UsrType, 
+                                S.SupplierID, 
+                                S.Address, 
+                                S.Tel, 
+                                S.Email, 
+                                S.IDTax, 
+                                S.FlagReady, 
+                                S.Fax
+                               FROM SupplyChain.dbo.PSR_M_User U
+                               JOIN SupplyChain.dbo.PSR_T_Supplier S
+                               ON U.Supplierid = S.SupplierID
+                               WHERE U.Supplierid = @Supplierid", connect)
 
-            cmd.Parameters.AddWithValue("@UserID", 1)
-            'cmd.Parameters.AddWithValue("@Usrname", usrname)
-            'cmd.Parameters.AddWithValue("@Detail", detail)
-            'cmd.Parameters.AddWithValue("@Supplierid", supplierId)
-            'cmd.Parameters.AddWithValue("@FNameT", fnameT)
-            'cmd.Parameters.AddWithValue("@FNameE", fnameE)
-            'cmd.Parameters.AddWithValue("@PositionT", positionT)
+            cmd.Parameters.AddWithValue("@Supplierid", 6449)
 
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
 
+            If reader.Read() Then
+                FullNameProfile.Text = reader("Detail").ToString()
+                UserType.Text = reader("UsrType").ToString()
+                Address.Text = reader("Address").ToString()
+                Tel.Text = reader("Tel").ToString()
+                Email.Text = reader("Email").ToString()
+                IDTax.Text = reader("IDTax").ToString()
+                FlagReady.Text = reader("FlagReady").ToString()
+                Fax.Text = reader("Fax").ToString()
+            End If
 
-
+            reader.Close()
         End Using
+
 
 
     End Sub

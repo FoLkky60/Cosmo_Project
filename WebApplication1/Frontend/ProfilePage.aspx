@@ -13,7 +13,7 @@
                     <asp:Literal ID="LiteralName" runat="server" Text="นายสมชาย วิริยะ" />
                 </h1>
                 <span class="profile-role role-admin" id="userRole">
-                    <asp:Literal ID="LiteralRole" runat="server" Text="ผู้ดูแลระบบ" />
+                    <asp:Literal ID="UserType" runat="server" />
                 </span>
             </div>
 
@@ -23,31 +23,31 @@
                     <div class="info-item">
                         <span class="info-label">ชื่อ-นามสกุล:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralFullName" runat="server" Text="นายสมชาย วิริยะ" />
+                            <asp:Literal ID="FullNameProfile" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">รหัสพนักงาน:</span>
+                        <span class="info-label">IDTax:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralEmployeeID" runat="server" Text="EMP001234" />
+                            <asp:Literal ID="IDTax" runat="server"  />
                         </span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">อีเมล:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralEmail" runat="server" Text="somchai.w@techcorp.co.th" />
+                            <asp:Literal ID="Email" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">เบอร์โทรศัพท์:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralPhone" runat="server" Text="02-123-4567 ต่อ 1234" />
+                            <asp:Literal ID="Tel" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">หน่วยงาน:</span>
+                        <span class="info-label">Fax:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralDepartment" runat="server" Text="ฝ่ายเทคโนโลยีสารสนเทศ" />
+                            <asp:Literal ID="Fax" runat="server"  />
                         </span>
                     </div>
                 </div>
@@ -55,33 +55,21 @@
                 <div class="info-section">
                     <h3>🏢 ข้อมูลการปฏิบัติงาน</h3>
                     <div class="info-item">
-                        <span class="info-label">หน่วยงาน:</span>
+                        <span class="info-label">FlagReady:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralCompany" runat="server" Text="บริษัท เทคคอร์ป จำกัด (มหาชน)" />
+                            <asp:Literal ID="FlagReady" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">ตำแหน่ง:</span>
+                        <span class="info-label">Address:</span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralPosition" runat="server" Text="หัวหน้าฝ่ายเทคโนโลยีสารสนเทศ" />
+                            <asp:Literal ID="Address" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">วันที่เริ่มปฏิบัติงาน:</span>
+                        <span class="info-label"></span>
                         <span class="info-value">
-                            <asp:Literal ID="LiteralStartDate" runat="server" Text="15 มีนาคม 2563" />
-                        </span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">ระดับเงินเดือน:</span>
-                        <span class="info-value">
-                            <asp:Literal ID="LiteralSalaryLevel" runat="server" Text="ระดับ 9" />
-                        </span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">สถานะการทำงาน:</span>
-                        <span class="info-value">
-                            <asp:Literal ID="LiteralWorkStatus" runat="server" Text="ปฏิบัติงานปกติ" />
+                           
                         </span>
                     </div>
                 </div>
