@@ -23,15 +23,6 @@ Partial Public Class MonitorTLS
     Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Button2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''GridViewMailFormat control.
     '''</summary>
     '''<remarks>
@@ -39,15 +30,6 @@ Partial Public Class MonitorTLS
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridViewMailFormat As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Button1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''pnlPopup control.

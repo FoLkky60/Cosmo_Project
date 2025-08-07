@@ -1,5 +1,4 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Net.Mail
 
@@ -15,39 +14,66 @@ Public Class SendEmailFrom
         End If
     End Sub
 
-    ' ตัวอย่างฟังก์ชันสำหรับ Bind GridView (ถ้ามี)
     Private Sub BindMailFormatGrid()
         Dim dt As New DataTable()
         Using conn As New SqlConnection(connStr)
             conn.Open()
-            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy)", conn)
-            Dim da As New SqlDataAdapter(cmd)
-            da.Fill(dt)
+            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy); SELECT SCOPE_IDENTITY();", conn)
+            cmd.Parameters.AddWithValue("@Type_Mail", 1)
+            cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year)
+            cmd.Parameters.AddWithValue("@Subject", "Sample Subject")  ' Adjust as per your need
+            cmd.Parameters.AddWithValue("@Body", "Sample Body")  ' Adjust as per your need
+            cmd.Parameters.AddWithValue("@Status", "Pending")
+            cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+
+            ' Get the MailID generated
+            Dim mailID As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+            ' You can use the returned mailID to use in your attachments insert statement
         End Using
-        ' GridViewMailFormat.DataSource = dt
-        ' GridViewMailFormat.DataBind()
     End Sub
 
     Protected Sub btnSend_Click(sender As Object, e As EventArgs)
         Dim subject As String = txtSubject.Text.Trim()
-        Dim body As String = txtBody.Text ' ได้ค่า HTML จาก CKEditor
+        Dim body As String = txtBody.Text
+        Dim filePath As String = "../FileUpload/" & fuFile.FileName
 
+        ' Save the file
+        fuFile.SaveAs(Server.MapPath(filePath))
+
+        ' Insert into PSR_M_MailFormat table and get the MailID
+        Dim mailID As Integer = 0
         Using conn As New SqlConnection(connStr)
             conn.Open()
-            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy)", conn)
+            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailFormat (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy) VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy); SELECT SCOPE_IDENTITY();", conn)
             cmd.Parameters.AddWithValue("@Type_Mail", 1)
             cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year)
             cmd.Parameters.AddWithValue("@Subject", subject)
             cmd.Parameters.AddWithValue("@Body", body)
             cmd.Parameters.AddWithValue("@Status", "Pending")
             cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+
+            mailID = Convert.ToInt32(cmd.ExecuteScalar())  ' Retrieve the generated MailID
+        End Using
+
+        ' Insert the attachment with the MailID
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+            Dim cmd As New SqlCommand("INSERT INTO PSR_M_MailAttachments (MailID, Folder_name, File_name, Files_link, CreatedDate, CreatedBy, UpdatedDate, UpdatedBy) VALUES (@MailID, @Folder_name, @File_name, @Files_link, GETDATE(), @CreatedBy, GETDATE(), @UpdatedBy)", conn)
+            cmd.Parameters.AddWithValue("@MailID", mailID)
+            cmd.Parameters.AddWithValue("@Folder_name", "SampleFolder")  ' You can set folder name as per your requirements
+            cmd.Parameters.AddWithValue("@File_name", fuFile.FileName)
+            cmd.Parameters.AddWithValue("@Files_link", filePath)
+            cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+            cmd.Parameters.AddWithValue("@UpdatedBy", "admin")
             cmd.ExecuteNonQuery()
         End Using
 
-        ' ล้างฟอร์ม
+        ' Clear the fields after sending the email
         txtRecipient.Text = ""
         txtSubject.Text = ""
         txtBody.Text = ""
+
+        ' Trigger success message popup
         ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showPopup", "showSuccessPopup();resetForm();", True)
     End Sub
 End Class

@@ -73,9 +73,9 @@ Public Class MonitorTLS
             End If
             reader.Close()
 
-
+            ' Load Attachments based on MailID
             Dim dtAttach As New DataTable()
-            Dim cmdAttach As New SqlCommand("SELECT File_name AS FileName FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
+            Dim cmdAttach As New SqlCommand("SELECT File_name AS FileName, Files_link AS FileLink FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
             cmdAttach.Parameters.AddWithValue("@MailID", mailID)
             Dim da As New SqlDataAdapter(cmdAttach)
             da.Fill(dtAttach)
@@ -83,13 +83,15 @@ Public Class MonitorTLS
             ' Add FileSize column (mocked)
             dtAttach.Columns.Add("FileSize")
             For Each row As DataRow In dtAttach.Rows
-                row("FileSize") = "2.4 MB"
+                row("FileSize") = "2.4 MB" ' Mocked value, you can calculate it dynamically if needed
             Next
 
+            ' Bind attachments to the Repeater
             rptAttachments.DataSource = dtAttach
             rptAttachments.DataBind()
         End Using
     End Sub
+
     Protected Sub GridViewMailFormat_RowCommand(sender As Object, e As GridViewCommandEventArgs)
         If e.CommandName = "ViewMail" Then
             Dim mailId As Integer = Convert.ToInt32(e.CommandArgument)
@@ -132,102 +134,5 @@ Public Class MonitorTLS
         ScriptManager.RegisterStartupScript(Me, Me.GetType(), "closeEditPopup", "closeEditPopup();", True)
     End Sub
 
-    'Public Sub PopulateBuyerDropdown(dt As DataTable)
-    '    DropDownList1.Items.Clear()
-    '    DropDownList1.Items.Add(New ListItem("All", "All"))
 
-    '    Dim buyerNames = dt.AsEnumerable().
-    '                      Select(Function(row) row.Field(Of String)("Buyer")).
-    '                      Where(Function(name) Not String.IsNullOrEmpty(name)).
-    '                      Distinct()
-
-    '    For Each buyerName As String In buyerNames
-    '        DropDownList1.Items.Add(New ListItem(buyerName, buyerName))
-    '    Next
-    'End Sub
-
-    'Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    Dim selectedBuyer As String = DropDownList1.SelectedValue
-    '    Dim dt As DataTable = GetRealData()
-
-    '    If selectedBuyer <> "All" Then
-    '        Dim filteredRows = dt.Select("Buyer = '" & selectedBuyer.Replace("'", "''") & "'")
-    '        Dim filteredDt As DataTable = dt.Clone()
-
-    '        For Each row In filteredRows
-    '            filteredDt.ImportRow(row)
-    '        Next
-
-    '        GridViewMailFormat.DataSource = filteredDt
-    '        Session("FilteredData") = filteredDt
-    '    Else
-    '        GridViewMailFormat.DataSource = dt
-    '    End If
-
-    '    GridViewMailFormat.DataBind()
-    'End Sub
-
-    'Protected Sub GridView1_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
-    '    GridViewMailFormat.PageIndex = e.NewPageIndex
-    '    LoadTb()
-    'End Sub
-
-    'Protected Sub DateFilter_Changed(sender As Object, e As EventArgs)
-    '    Dim dateStart As Date
-    '    Dim dateEnd As Date
-
-    '    If Date.TryParse(txtDateStart.Text, dateStart) AndAlso Date.TryParse(txtDateEnd.Text, dateEnd) Then
-    '        Dim dt As DataTable = GetRealData()
-
-    '        Dim result = dt.AsEnumerable().Where(Function(r)
-    '                                                 Dim responseDate As Date
-    '                                                 If Date.TryParse(r("ResponseDate").ToString(), responseDate) Then
-    '                                                     Return responseDate >= dateStart AndAlso responseDate <= dateEnd
-    '                                                 Else
-    '                                                     Return False
-    '                                                 End If
-    '                                             End Function)
-
-    '        If result.Any() Then
-    '            GridViewMailFormat.DataSource = result.CopyToDataTable()
-    '        Else
-    '            GridViewMailFormat.DataSource = Nothing
-    '        End If
-    '        GridViewMailFormat.DataBind()
-    '    End If
-    'End Sub
-
-    'Protected Sub txtKeyword_TextChanged(sender As Object, e As EventArgs)
-    '    Dim keyword As String = txtKeyword.Text.Trim()
-    '    Dim dt As DataTable = GetRealData()
-    '    Dim result As IEnumerable(Of DataRow)
-
-    '    If String.IsNullOrEmpty(keyword) Then
-    '        GridViewMailFormat.DataSource = dt
-    '        GridViewMailFormat.DataBind()
-    '        Return
-    '    End If
-
-    '    result = dt.AsEnumerable().Where(Function(r) _
-    '        r("SupplierId").ToString().ToLower().Contains(keyword.ToLower()) OrElse
-    '        r("username").ToString().ToLower().Contains(keyword.ToLower()))
-
-    '    If result.Any() Then
-    '        GridViewMailFormat.DataSource = result.CopyToDataTable()
-    '    Else
-    '        GridViewMailFormat.DataSource = Nothing
-    '        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('No matching data found.');", True)
-    '    End If
-
-    '    GridViewMailFormat.DataBind()
-    'End Sub
-
-    'Protected Sub btnClear_Click(sender As Object, e As EventArgs)
-    '    txtKeyword.Text = ""
-    '    DropDownList1.SelectedValue = "All"
-    '    txtDateStart.Text = ""
-    '    txtDateEnd.Text = ""
-    '    GridViewMailFormat.PageIndex = 0
-    '    LoadTb()
-    'End Sub
 End Class

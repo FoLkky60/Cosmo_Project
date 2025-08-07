@@ -59,24 +59,6 @@ Partial Public Class SendEmailFrom
     Protected WithEvents fuFile As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''FileUpload1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
-
-    '''<summary>
-    '''fuImage control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents fuImage As Global.System.Web.UI.WebControls.FileUpload
-
-    '''<summary>
     '''btnSend control.
     '''</summary>
     '''<remarks>
