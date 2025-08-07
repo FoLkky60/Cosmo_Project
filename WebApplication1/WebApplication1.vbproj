@@ -190,6 +190,7 @@
     <Content Include="Frontend\FromQeations.aspx" />
     <Content Include="Frontend\Home.aspx" />
     <Content Include="imge\Logo01.png" />
+    <Content Include="javaScript\ProfilePage.js" />
     <Content Include="Login.aspx" />
     <Content Include="Frontend\EmailMonitorTLS.aspx" />
     <Content Include="Frontend\ProfilePage.aspx" />

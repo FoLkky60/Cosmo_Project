@@ -5419,6 +5419,159 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication1.ProfilePage._LiteralAvatar">
+<summary>
+LiteralAvatar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralName">
+<summary>
+LiteralName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralRole">
+<summary>
+LiteralRole control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralFullName">
+<summary>
+LiteralFullName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralEmployeeID">
+<summary>
+LiteralEmployeeID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralEmail">
+<summary>
+LiteralEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralPhone">
+<summary>
+LiteralPhone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralDepartment">
+<summary>
+LiteralDepartment control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralCompany">
+<summary>
+LiteralCompany control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralPosition">
+<summary>
+LiteralPosition control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralStartDate">
+<summary>
+LiteralStartDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralSalaryLevel">
+<summary>
+LiteralSalaryLevel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralWorkStatus">
+<summary>
+LiteralWorkStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralWorkDays">
+<summary>
+LiteralWorkDays control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralProjectsCompleted">
+<summary>
+LiteralProjectsCompleted control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralRating">
+<summary>
+LiteralRating control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.ProfilePage._LiteralYearsInService">
+<summary>
+LiteralYearsInService control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication1.RestingPage._form1">
 <summary>
 form1 control.
