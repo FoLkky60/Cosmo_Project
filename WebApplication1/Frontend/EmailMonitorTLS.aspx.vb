@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net
 Imports System.Net.Mail
+Imports System.IO
 
 Public Class MonitorTLS
     Inherits System.Web.UI.Page
@@ -134,5 +135,66 @@ Public Class MonitorTLS
         ScriptManager.RegisterStartupScript(Me, Me.GetType(), "closeEditPopup", "closeEditPopup();", True)
     End Sub
 
+    Protected Sub btnSendMail_Click(sender As Object, e As EventArgs)
+        Dim btn As Button = DirectCast(sender, Button)
+        Dim mailId As Integer = Convert.ToInt32(btn.CommandArgument)
+        Dim subject As String = ""
+        Dim body As String = ""
+        Dim attachments As New List(Of String)()
+        Dim recipient As String = "sendmailt53@gmail.com"
 
+        Using conn As New SqlConnection(connStr)
+            conn.Open()
+
+            Dim cmd As New SqlCommand("SELECT Subject, Body FROM PSR_M_MailFormat WHERE MailID = @MailID", conn)
+            cmd.Parameters.AddWithValue("@MailID", mailId)
+
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+            If reader.Read() Then
+                subject = reader("Subject").ToString()
+                body = reader("Body").ToString()
+            End If
+            reader.Close()
+
+            Dim cmdAttachments As New SqlCommand("SELECT Files_link FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
+            cmdAttachments.Parameters.AddWithValue("@MailID", mailId)
+            Dim attachmentReader As SqlDataReader = cmdAttachments.ExecuteReader()
+
+            While attachmentReader.Read()
+                attachments.Add(attachmentReader("Files_link").ToString())
+            End While
+            attachmentReader.Close()
+        End Using
+
+        Try
+            Dim mail As New MailMessage()
+            mail.From = New MailAddress("phachara975@gmail.com")
+            mail.To.Add(recipient)
+            mail.Subject = subject
+            mail.Body = body
+            mail.IsBodyHtml = True
+
+            For Each attachmentPath As String In attachments
+                If File.Exists(attachmentPath) Then
+                    mail.Attachments.Add(New Attachment(attachmentPath))
+                Else
+                    Throw New Exception("File not found: " & attachmentPath)
+                End If
+            Next
+
+            Dim smtp As New SmtpClient("smtp.gmail.com")
+            smtp.Port = 587
+            smtp.EnableSsl = True
+            smtp.Credentials = New NetworkCredential("phachara975@gmail.com", "nomg sznr hyjr nrum")
+
+            smtp.Send(mail)
+
+            BindMailFormatGrid()
+
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Email sent successfully!');", True)
+
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Error sending email: " & ex.Message & "');", True)
+        End Try
+    End Sub
 End Class

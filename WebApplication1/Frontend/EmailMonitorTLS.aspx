@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master/FromMaster.Master" CodeBehind="EmailMonitorTLS.aspx.vb" Inherits="WebApplication1.MonitorTLS" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <link href="../style/Emailmonitor.css" rel="stylesheet" />
@@ -119,6 +120,7 @@
                             <asp:BoundField DataField="UpdatedDate" HeaderText="Updated Date" />
                             <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By" />
                             <asp:BoundField DataField="Status" HeaderText="Status" />
+
                             <asp:TemplateField HeaderText="View">
                                 <ItemTemplate>
                                     <asp:LinkButton
@@ -127,6 +129,19 @@
                                         Text="View"
                                         CommandName="ViewMail"
                                         CommandArgument='<%# Eval("MailID") %>'  />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+              
+
+                            <asp:TemplateField HeaderText="Send Mail">
+                                <ItemTemplate>
+                                    <asp:Button
+                                        ID="btnSendMail"
+                                        runat="server"
+                                        Text="Send"
+                                        CommandName="SendMail"
+                                        CommandArgument='<%# Eval("MailID") %>'
+                                        OnClick="btnSendMail_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
