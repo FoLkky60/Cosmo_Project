@@ -34,7 +34,7 @@
                             <asp:Label ID="lblMessage" runat="server" ForeColor="Red" />
                         </div>
                         <div class="d-flex flex-column gap-1 mt-1">
-                            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="submit-style" />
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="submit-style" OnClick="IbtLogin_Click" />
 
                             <div class="forgot-style cursor" onclick="showForgotPassword()">forgot password?</div>
                         </div>
