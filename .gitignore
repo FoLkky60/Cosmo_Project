@@ -1,3 +1,5 @@
 *.cache
 *.txt
 /.vs
+*.config
+/.vs/WebApplication1/config
