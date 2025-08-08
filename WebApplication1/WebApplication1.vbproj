@@ -190,6 +190,7 @@
     <Content Include="Frontend\FromQeations.aspx" />
     <Content Include="Frontend\Home.aspx" />
     <Content Include="imge\Logo01.png" />
+    <Content Include="javaScript\EmailPage.js" />
     <Content Include="javaScript\ProfilePage.js" />
     <Content Include="Login.aspx" />
     <Content Include="Frontend\EmailMonitorTLS.aspx" />
@@ -272,6 +273,7 @@
     <Content Include="style\followPage.css" />
     <Content Include="style\home.css" />
     <Content Include="style\Login.css" />
+    <Content Include="style\Profile.css" />
     <Content Include="style\Site.css" />
     <Content Include="style\sumery.css" />
     <Content Include="Web.config" />

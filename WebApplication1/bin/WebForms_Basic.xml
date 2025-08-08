@@ -5329,6 +5329,51 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication1.MonitorTLS._ddlSearchType">
+<summary>
+ddlSearchType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._ddlSearchMailID">
+<summary>
+ddlSearchMailID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._ddlSearchYear">
+<summary>
+ddlSearchYear control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._ddlSearchStatus">
+<summary>
+ddlSearchStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.MonitorTLS._clearSearch">
+<summary>
+clearSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication1.MonitorTLS._GridViewMailFormat">
 <summary>
 GridViewMailFormat control.
@@ -5428,9 +5473,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralName">
+<member name="F:WebApplication1.ProfilePage._FullNameProfile">
 <summary>
-LiteralName control.
+FullNameProfile control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -5440,15 +5485,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication1.ProfilePage._UserType">
 <summary>
 UserType control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ProfilePage._FullNameProfile">
-<summary>
-FullNameProfile control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -5491,6 +5527,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication1.ProfilePage._Buyer">
+<summary>
+Buyer control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication1.ProfilePage._FlagReady">
 <summary>
 FlagReady control.
@@ -5509,27 +5554,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralStartDate">
+<member name="F:WebApplication1.ProfilePage._TlsYear">
 <summary>
-LiteralStartDate control.
+TlsYear control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication1.ProfilePage._LiteralSalaryLevel">
+<member name="F:WebApplication1.ProfilePage._DateCreate">
 <summary>
-LiteralSalaryLevel control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication1.ProfilePage._LiteralWorkStatus">
-<summary>
-LiteralWorkStatus control.
+DateCreate control.
 </summary>
 <remarks>
 Auto-generated field.

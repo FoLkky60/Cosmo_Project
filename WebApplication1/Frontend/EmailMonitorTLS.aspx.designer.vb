@@ -23,6 +23,51 @@ Partial Public Class MonitorTLS
     Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''ddlSearchType control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSearchType As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddlSearchMailID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSearchMailID As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddlSearchYear control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSearchYear As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddlSearchStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSearchStatus As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''clearSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents clearSearch As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''GridViewMailFormat control.
     '''</summary>
     '''<remarks>

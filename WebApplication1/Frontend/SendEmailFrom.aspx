@@ -51,10 +51,15 @@
                 <div class="form-group">
                     <label>แนบไฟล์</label>
                     <asp:FileUpload ID="fuFile" runat="server" AllowMultiple="true" />
-                </div>
-            
+                </div>                   
+                   <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" OnClientClick="syncCKEditor();" />
+            </form>
+        </div>
 
-                <%--<div class="form-group">
+
+    </div>
+
+     <%--<div class="form-group">
                     <label>แนบไฟล์</label>
                     <div class="file-input-group">
                         <div class="file-input-wrapper">
@@ -78,15 +83,7 @@
                             <div class="file-preview" id="imagePreview"></div>
                         </div>
                     </div>
-                </div>  --%>             
-                   <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" OnClientClick="syncCKEditor();" />
-            </form>
-        </div>
-
-
-    </div>
-
-
+                </div>  --%>   
 
 
     <!-- Success Popup -->
@@ -102,7 +99,6 @@
     <script>
         let links = [];
 
-        // File preview functionality
         document.getElementById('fileAttachment').addEventListener('change', function (e) {
             showFilePreview(e.target.files, 'filePreview');
         });
@@ -122,7 +118,7 @@
             }
         }
 
-        // Link management
+
         function addLink() {
             const linkInput = document.getElementById('linkInput');
             const url = linkInput.value.trim();
@@ -165,26 +161,16 @@
             });
         }
 
-        // Form submission
-        //document.getElementById('emailForm').addEventListener('submit', function (e) {
-        //    e.preventDefault();
 
-           
-        //    setTimeout(() => {
-        //        showSuccessPopup();
-        //        resetForm();
-        //    }, 1000);
-        //});
 
         function showSuccessPopup() {
             document.getElementById('popupOverlay').style.display = 'flex';
-            // รีเฟรชหน้าหลัง 1.5 วินาที (หรือหลัง popup โชว์)
+
             setTimeout(function () {
                 window.location.reload();
             }, 1500);
         }
 
-        // หรือถ้าต้องการรีเฟรชเมื่อกดปุ่ม "ตกลง"
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
             window.location.reload();
@@ -198,7 +184,7 @@
             document.getElementById('imagePreview').style.display = 'none';
         }
 
-        // Allow Enter key to add links
+
         document.getElementById('linkInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -206,7 +192,6 @@
             }
         });
 
-        // Close popup when clicking outside
         document.getElementById('popupOverlay').addEventListener('click', function (e) {
             if (e.target === this) {
                 closePopup();

@@ -28,11 +28,18 @@ Public Class ProfilePage
                                 S.Email, 
                                 S.IDTax, 
                                 S.FlagReady, 
-                                S.Fax
-                               FROM SupplyChain.dbo.PSR_M_User U
-                               JOIN SupplyChain.dbo.PSR_T_Supplier S
-                               ON U.Supplierid = S.SupplierID
-                               WHERE U.Supplierid = @Supplierid", connect)
+                                S.Fax,
+                                T.TlsID,
+                                T.TlsYear,
+                                T.SupplierCode,
+                                T.DateCreate,
+                                T.Buyer,
+                                T.BuyerName,
+                                T.ByUsr
+                            FROM SupplyChain.dbo.PSR_M_User U
+                            JOIN SupplyChain.dbo.PSR_T_Supplier S ON U.Supplierid = S.SupplierID
+                            JOIN SupplyChain.dbo.PSR_T_Tls T ON S.SupplierID = T.Supplierid
+                            WHERE U.Supplierid = @Supplierid", connect)
 
             cmd.Parameters.AddWithValue("@Supplierid", 6449)
 
@@ -47,6 +54,11 @@ Public Class ProfilePage
                 IDTax.Text = reader("IDTax").ToString()
                 FlagReady.Text = reader("FlagReady").ToString()
                 Fax.Text = reader("Fax").ToString()
+                TlsYear.Text = reader("TlsYear").ToString()
+                Buyer.Text = reader("Buyer").ToString()
+                DateCreate.Text = reader("DateCreate").ToString()
+
+
             End If
 
             reader.Close()

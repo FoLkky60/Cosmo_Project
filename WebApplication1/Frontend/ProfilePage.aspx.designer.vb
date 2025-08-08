@@ -23,13 +23,13 @@ Partial Public Class ProfilePage
     Protected WithEvents LiteralAvatar As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''LiteralName control.
+    '''FullNameProfile control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LiteralName As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents FullNameProfile As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''UserType control.
@@ -39,15 +39,6 @@ Partial Public Class ProfilePage
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UserType As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
-    '''FullNameProfile control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents FullNameProfile As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''IDTax control.
@@ -86,6 +77,15 @@ Partial Public Class ProfilePage
     Protected WithEvents Fax As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
+    '''Buyer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Buyer As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
     '''FlagReady control.
     '''</summary>
     '''<remarks>
@@ -102,6 +102,24 @@ Partial Public Class ProfilePage
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Address As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''TlsYear control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TlsYear As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''DateCreate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DateCreate As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''LiteralWorkDays control.

@@ -7,10 +7,10 @@
         <div class="profile-card">
             <div class="profile-header">
                 <div class="profile-avatar" id="avatar">
-                    <asp:Literal ID="LiteralAvatar" runat="server" Text="สม" />
+                    <asp:Literal ID="LiteralAvatar" runat="server" />
                 </div>
                 <h1 class="profile-name">
-                    <asp:Literal ID="LiteralName" runat="server" Text="นายสมชาย วิริยะ" />
+                    <asp:Literal ID="FullNameProfile" runat="server" />
                 </h1>
                 <span class="profile-role role-admin" id="userRole">
                     <asp:Literal ID="UserType" runat="server" />
@@ -19,11 +19,10 @@
 
             <div class="profile-info">
                 <div class="info-section">
-                    <h3>📋 ข้อมูลส่วนตัว</h3>
                     <div class="info-item">
-                        <span class="info-label">ชื่อ-นามสกุล:</span>
+                        <span class="info-label">บริษัท:</span>
                         <span class="info-value">
-                            <asp:Literal ID="FullNameProfile" runat="server" />
+                            
                         </span>
                     </div>
                     <div class="info-item">
@@ -53,7 +52,12 @@
                 </div>
 
                 <div class="info-section">
-                    <h3>🏢 ข้อมูลการปฏิบัติงาน</h3>
+                    <div class="info-item">
+                        <span class="info-label">Buyer:</span>
+                        <span class="info-value">
+                            <asp:Literal ID="Buyer" runat="server" />
+                        </span>
+                    </div>
                     <div class="info-item">
                         <span class="info-label">FlagReady:</span>
                         <span class="info-value">
@@ -62,16 +66,23 @@
                     </div>
                     <div class="info-item">
                         <span class="info-label">Address:</span>
-                        <span class="info-value">
+                        <span class="info-value overflow-auto">
                             <asp:Literal ID="Address" runat="server" />
                         </span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label"></span>
+                        <span class="info-label">Year:</span>
                         <span class="info-value">
-                           
+                            <asp:Literal ID="TlsYear" runat="server" />
                         </span>
                     </div>
+                    <div class="info-item">
+                        <span class="info-label">DateCreate:</span>
+                        <span class="info-value">
+                            <asp:Literal ID="DateCreate" runat="server" />
+                        </span>
+                    </div>
+                    
                 </div>
             </div>
 

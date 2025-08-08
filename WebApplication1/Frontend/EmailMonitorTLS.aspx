@@ -93,9 +93,50 @@
                         </div>
                     </div>
                 </div>
-                <a href="SendEmailFrom" class=" d-flex justify-content-end  cursor-pointer m-2" > 
-                                    <iconify-icon icon="zondicons:add-solid" width="50" height="50"></iconify-icon>
-                                </a>
+                <div class=" d-flex justify-content-between  gap-2 ">
+                    <div class="d-flex  align-items-center gap-4 ">
+                        <div>
+                            <asp:DropDownList ID="ddlSearchType" runat="server" CssClass="dropdown-custom" AutoPostBack="true" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
+                                <asp:ListItem Text="All" Value="" />
+
+                            </asp:DropDownList>
+                        </div>
+
+                        <div>
+                            <asp:DropDownList ID="ddlSearchMailID" runat="server" CssClass="dropdown-custom " AutoPostBack="true" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
+                                <asp:ListItem Text="All" Value="" />
+
+                            </asp:DropDownList>
+                        </div>
+
+
+                        <div>
+                            <asp:DropDownList ID="ddlSearchYear" runat="server" CssClass="dropdown-custom" AutoPostBack="true" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
+                                <asp:ListItem Text="All" Value="" />
+
+                            </asp:DropDownList>
+                        </div>
+
+
+                        <div>
+                            <asp:DropDownList ID="ddlSearchStatus" runat="server" CssClass="dropdown-custom" AutoPostBack="true" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
+                                <asp:ListItem Text="All" Value="" />
+
+                            </asp:DropDownList>
+                        </div>
+                        <div>
+                            <asp:LinkButton ID="clearSearch" runat="server" Text="Clear" CssClass=" " OnClick="btnClear_Click">
+                            <iconify-icon icon="tdesign:clear-filled" width="24" height="24"></iconify-icon>
+                            </asp:LinkButton>
+                        </div>
+
+                    </div>
+
+                    <div class=" d-flex justify-content-end  m-2 ">
+                        <a href="SendEmailFrom" class="btn btn-info  cursor-pointer">📝 เพิ่มเมล
+                        </a>
+                    </div>
+                </div>
                 <div class="w-100 overflow-auto mw shadowcustom bg-white">
                     <asp:GridView ID="GridViewMailFormat" runat="server" AutoGenerateColumns="False"
                         Width="100%"

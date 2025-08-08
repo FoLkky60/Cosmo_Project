@@ -1,4 +1,27 @@
-﻿.marker {
+﻿
+.dropdown-custom {
+    background-color: #f8f9fa;
+    border: 1px solid #065ba7;
+    padding: 8px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+    .dropdown-custom option {
+        padding: 10px;
+        border: 1px solid #065ba7;
+    }
+
+    .dropdown-custom:focus {
+        border-color: #065ba7;
+        outline: none;
+    }
+
+
+
+
+.marker {
     background-color: yellow;
 }
 
@@ -217,8 +240,7 @@ body {
     display: flex;
     gap: 16px;
     justify-content: center;
-    margin-top: 32px;
-    padding-top: 24px;
+
     border-top: 1px solid #f1f5f9;
 }
 
