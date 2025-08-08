@@ -30,7 +30,7 @@
 
                     </div>
                 </div>
-                <div class="overflow-auto shadowcustom bg-white">
+                <div class=" max-wid  overflow-auto shadowcustom bg-white">
                     <asp:GridView
                         ID="GridView1"
                         runat="server"

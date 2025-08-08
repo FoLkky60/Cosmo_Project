@@ -30,7 +30,7 @@
 
                     </div>
                 </div>
-                <div class="overflow-auto shadowcustom bg-white">
+                <div class="max-wid overflow-auto shadowcustom bg-white">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="100%" CssClass="grid-sum" AllowPaging="True" PageSize="10" OnPageIndexChanging="GridView1_PageIndexChanging">
                         <PagerStyle CssClass="pager" HorizontalAlign="Center" />
                         <Columns>

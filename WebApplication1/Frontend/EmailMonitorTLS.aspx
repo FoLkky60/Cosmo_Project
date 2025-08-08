@@ -176,7 +176,7 @@
 
                             <asp:TemplateField HeaderText="Send Mail">
                                 <ItemTemplate>
-                                    <asp:Button
+                                    <asp:LinkButton
                                         ID="btnSendMail"
                                         runat="server"
                                         Text="Send"
