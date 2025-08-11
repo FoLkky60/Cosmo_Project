@@ -54,6 +54,8 @@ Public Class Login
                     Session("sl") = "T"
                     Session("SYS") = "PO"
 
+                    FormsAuthentication.SetAuthCookie(Session("pousr").ToString(), False)
+
 
                     '## ทดสอบ 2016/01/04
                     '// Redirect New Page ใหม่
@@ -274,6 +276,7 @@ Public Class Login
                     Session("sl") = "T"
                     Session("SYS") = "TLS"
 
+                    FormsAuthentication.SetAuthCookie(Session("pousr").ToString(), False)
                     'Save LogsSystem
                     Dim objLogs As New ClsSystemLogsInfo
                     Dim objLogs_ As New ClsSystemLogsInfo
@@ -301,7 +304,7 @@ Public Class Login
                         objMyconn.mqryNoReturn(objLogs_.SqlCmd_Insert(objLogs))
                         ''//Save LogsSystem
 
-                        Response.Redirect("Frontend/FromQeations.aspx.aspx?ids=" & UCase(txtUsername.Text.Trim) & "")
+                        Response.Redirect("Frontend/FromQeations.aspx?ids=" & UCase(txtUsername.Text.Trim) & "")
 
                     End If
                     '// Redirect New Page ใหม่
