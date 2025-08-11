@@ -176,7 +176,7 @@
 
                             <asp:TemplateField HeaderText="Send Mail">
                                 <ItemTemplate>
-                                    <asp:LinkButton
+                                    <asp:Button
                                         ID="btnSendMail"
                                         runat="server"
                                         Text="Send"
@@ -220,7 +220,7 @@
                     <div class="field-label">📎 ไฟล์แนบ</div>
                     <asp:Repeater ID="rptAttachments" runat="server">
                         <ItemTemplate>
-                            <div class="file-item">
+                            <div class="file-item m-1">
                                 <div class="file-icon">📄</div>
                                 <div class="file-info">
                                     <div class="file-name">

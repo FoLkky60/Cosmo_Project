@@ -50,7 +50,8 @@
                 </div>
                 <div class="form-group">
                     <label>แนบไฟล์</label>
-                    <asp:FileUpload ID="fuFile" runat="server" AllowMultiple="true" />
+                    <asp:FileUpload ID="fuFiles" runat="server" AllowMultiple="true" />
+
                 </div>                   
                    <asp:Button ID="btnSend" runat="server" Text="📤 ส่งอีเมล" CssClass="send-btn" OnClick="btnSend_Click" OnClientClick="syncCKEditor();" />
             </form>
