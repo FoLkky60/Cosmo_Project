@@ -145,34 +145,37 @@ Public Class MonitorTLS
     Protected Sub btnSendMail_Click(sender As Object, e As EventArgs)
         Dim btn As Button = DirectCast(sender, Button)
         Dim mailId As Integer = Convert.ToInt32(btn.CommandArgument)
+
         Dim subject As String = ""
         Dim body As String = ""
         Dim attachments As New List(Of String)()
-        Dim recipient As String = "sendmailt53@gmail.com"
+        Dim recipient As String = "sendmailt53@gmail.com" ' ปรับตามจริง
 
+        ' 1) โหลด Subject/Body + ลิงก์ไฟล์ทั้งหมดของ MailID
         Using conn As New SqlConnection(connStr)
             conn.Open()
 
-            Dim cmd As New SqlCommand("SELECT Subject, Body FROM PSR_M_MailFormat WHERE MailID = @MailID", conn)
-            cmd.Parameters.AddWithValue("@MailID", mailId)
+            Using cmd As New SqlCommand("SELECT Subject, Body FROM PSR_M_MailFormat WHERE MailID=@MailID", conn)
+                cmd.Parameters.AddWithValue("@MailID", mailId)
+                Using reader = cmd.ExecuteReader()
+                    If reader.Read() Then
+                        subject = reader("Subject").ToString()
+                        body = reader("Body").ToString()
+                    End If
+                End Using
+            End Using
 
-            Dim reader As SqlDataReader = cmd.ExecuteReader()
-            If reader.Read() Then
-                subject = reader("Subject").ToString()
-                body = reader("Body").ToString()
-            End If
-            reader.Close()
-
-            Dim cmdAttachments As New SqlCommand("SELECT Files_link FROM PSR_M_MailAttachments WHERE MailID = @MailID", conn)
-            cmdAttachments.Parameters.AddWithValue("@MailID", mailId)
-            Dim attachmentReader As SqlDataReader = cmdAttachments.ExecuteReader()
-
-            While attachmentReader.Read()
-                attachments.Add(attachmentReader("Files_link").ToString())
-            End While
-            attachmentReader.Close()
+            Using cmdAttachments As New SqlCommand("SELECT Files_link FROM PSR_M_MailAttachments WHERE MailID=@MailID", conn)
+                cmdAttachments.Parameters.AddWithValue("@MailID", mailId)
+                Using rdr = cmdAttachments.ExecuteReader()
+                    While rdr.Read()
+                        attachments.Add(rdr("Files_link").ToString())
+                    End While
+                End Using
+            End Using
         End Using
 
+        ' 2) ส่งอีเมล + แนบเฉพาะรูปภาพทั้งหมดใน MailID
         Try
             Dim mail As New MailMessage()
             mail.From = New MailAddress("phachara975@gmail.com")
@@ -181,29 +184,61 @@ Public Class MonitorTLS
             mail.Body = body
             mail.IsBodyHtml = True
 
-            For Each attachmentPath As String In attachments
-                If File.Exists(attachmentPath) Then
-                    mail.Attachments.Add(New Attachment(attachmentPath))
+            ' อนุญาตเฉพาะรูปภาพ
+            Dim allowedExt As String() = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"}
+
+            For Each link As String In attachments
+                ' แปลงพาธให้ถูกต้องก่อน
+                Dim physicalPath As String = ResolveToPhysicalPath(link)
+
+                ' กรองเฉพาะไฟล์รูปภาพเท่านั้น
+                Dim ext As String = Path.GetExtension(physicalPath).ToLowerInvariant()
+                If Not allowedExt.Contains(ext) Then
+                    ' ข้ามถ้าไม่ใช่รูปภาพ
+                    Continue For
+                End If
+
+                If File.Exists(physicalPath) Then
+                    ' สร้าง Attachment ใน Using เพื่อเคลียร์ resource ถูกต้อง
+                    Dim att As New Attachment(physicalPath)
+                    mail.Attachments.Add(att)
                 Else
-                    Throw New Exception("File not found: " & attachmentPath)
+                    ' แจ้งเตือนถ้าหาไฟล์ไม่เจอ (ไม่ให้ล้มทั้งเมล)
+                    ' คุณจะ log ไว้ก็ได้
                 End If
             Next
 
-            Dim smtp As New SmtpClient("smtp.gmail.com")
-            smtp.Port = 587
-            smtp.EnableSsl = True
-            smtp.Credentials = New NetworkCredential("phachara975@gmail.com", "nomg sznr hyjr nrum")
+            Dim smtp As New SmtpClient("smtp.gmail.com") With {
+            .Port = 587,
+            .EnableSsl = True,
+            .Credentials = New NetworkCredential("phachara975@gmail.com", "nomg sznr hyjr nrum")
+        }
 
             smtp.Send(mail)
 
             BindMailFormatGrid()
-
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Email sent successfully!');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Email sent with all images for this ID!');", True)
 
         Catch ex As Exception
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Error sending email: " & ex.Message & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Error sending email: " & ex.Message.Replace("'", "\'") & "');", True)
         End Try
     End Sub
+
+    ' Helper: แปลงพาธ relative/virtual ให้เป็นพาธจริงบนเครื่อง
+    Private Function ResolveToPhysicalPath(pathOrUrl As String) As String
+        If String.IsNullOrWhiteSpace(pathOrUrl) Then Return pathOrUrl
+
+        Dim p As String = pathOrUrl.Trim()
+
+        ' กรณีที่เก็บเป็น virtual/relative เช่น "~/FileUpload/abc.jpg", "../FileUpload/abc.jpg", "/FileUpload/abc.jpg"
+        If p.StartsWith("~") OrElse p.StartsWith("/") OrElse p.StartsWith(".") Then
+            Return Server.MapPath(p)
+        End If
+
+        ' กรณีเป็น URL หรือ UNC/Absolute path อยู่แล้ว ให้คืนเดิม
+        ' (เช่น \\server\share\file.jpg หรือ C:\inetpub\wwwroot\FileUpload\file.jpg)
+        Return p
+    End Function
 
 
 

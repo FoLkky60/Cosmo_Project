@@ -50,13 +50,13 @@ Partial Public Class SendEmailFrom
     Protected WithEvents txtBody As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''fuFile control.
+    '''fuFiles control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents fuFile As Global.System.Web.UI.WebControls.FileUpload
+    Protected WithEvents fuFiles As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
     '''btnSend control.
