@@ -30,7 +30,7 @@
 
                     </div>
                 </div>
-                <div class="overflow-auto shadowcustom bg-white">
+                <div class=" max-wid  overflow-auto shadowcustom bg-white">
                     <asp:GridView
                         ID="GridView1"
                         runat="server"
@@ -43,41 +43,96 @@
                         OnPageIndexChanging="GridView1_PageIndexChanging">
                         <PagerStyle CssClass="pager" HorizontalAlign="Center" />
                         <Columns>
-                            <asp:BoundField DataField="sNO" HeaderText="ลำดับ" SortExpression="sNO">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="TlsID" HeaderText="TlsID" SortExpression="TlsID">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="buyer_name" HeaderText="ชื่อดำเนินการ" SortExpression="buyer_name">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="TlsYear" HeaderText="TlsYear" SortExpression="TlsYear">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="Supplierid" HeaderText="Supplierid" SortExpression="Supplierid">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="po_sent" HeaderText="ส่ง" SortExpression="po_sent">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="SupplierCode" HeaderText="SupplierCode" SortExpression="SupplierCode">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="po_accept" HeaderText="ตอบแล้ว" SortExpression="po_accept">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="DateCreate" HeaderText="DateCreate" SortExpression="DateCreate">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="po_no_response" HeaderText="ยังไม่ได้ตอบ" SortExpression="po_no_response">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="Response" HeaderText="Response" SortExpression="Response">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="pr_sent" HeaderText="ตรวจสอบแล้ว" SortExpression="pr_sent">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="DateResponse" HeaderText="DateResponse" SortExpression="DateResponse">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="pr_accept" HeaderText="ยังไม่ได้ตรวจสอบ" SortExpression="pr_accept">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="Buyer" HeaderText="Buyer" SortExpression="Buyer">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="eva_sent" HeaderText="ยังไม่ได้คำตอบ" SortExpression="eva_sent">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="BuyerName" HeaderText="BuyerName" SortExpression="BuyerName">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="year" HeaderText="ปี พ.ศ." SortExpression="year">
-                                <ItemStyle CssClass="p-2 border border-1 nowrap" />
+                            <asp:BoundField DataField="ByUsr" HeaderText="ByUsr" SortExpression="ByUsr">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="DateUpload" HeaderText="DateUpload" SortExpression="DateUpload">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlagSentEmail" HeaderText="FlagSentEmail" SortExpression="FlagSentEmail">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="SentEmailDatetime" HeaderText="SentEmailDatetime" SortExpression="SentEmailDatetime">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="UnitSentEmail" HeaderText="UnitSentEmail" SortExpression="UnitSentEmail">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlagRead" HeaderText="FlagRead" SortExpression="FlagRead">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="DateRead" HeaderText="DateRead" SortExpression="DateRead">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Remark" HeaderText="Remark" SortExpression="Remark">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlagConfirm" HeaderText="FlagConfirm" SortExpression="FlagConfirm">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FileDocCommitment" HeaderText="FileDocCommitment" SortExpression="FileDocCommitment">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlagCompleted" HeaderText="FlagCompleted" SortExpression="FlagCompleted">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FlagPrint" HeaderText="FlagPrint" SortExpression="FlagPrint">
+                                <HeaderStyle CssClass="p-2 text-center" />
+                                <ItemStyle CssClass="p-2 border border-1 nowrap text-center" />
                             </asp:BoundField>
                         </Columns>
                     </asp:GridView>
-
-
                 </div>
+
+
+
             </div>
         </div>
     </div>

@@ -21,4 +21,49 @@ Partial Public Class SendEmailFrom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents emailForm As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
+    '''txtRecipient control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtRecipient As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtSubject control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSubject As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtBody control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtBody As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''fuFiles control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents fuFiles As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''btnSend control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSend As Global.System.Web.UI.WebControls.Button
 End Class
