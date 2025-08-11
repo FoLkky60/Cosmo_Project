@@ -8,7 +8,7 @@
 
         Session.Abandon()
 
-        Response.Redirect("/loginPage.aspx")
+        Response.Redirect("/Login.aspx")
         Console.WriteLine("clear session")
 
     End Sub
