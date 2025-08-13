@@ -112,6 +112,8 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <p>ข้อมูลผู้ใช้ที่ล็อกอิน: <%= Session("pousr") %></p>
+    <label id="lblSupplierId" runat="server"></label>
     <div class="d-flex justify-content-center">
         <div class="vw-75 overflow-auto">
             <div class="d-flex justify-content-center">

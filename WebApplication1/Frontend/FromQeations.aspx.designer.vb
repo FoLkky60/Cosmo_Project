@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class FromQeations
 
     '''<summary>
+    '''lblSupplierId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSupplierId As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lblCompany control.
     '''</summary>
     '''<remarks>

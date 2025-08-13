@@ -4,6 +4,7 @@ Imports System.Web.Services
 Imports System.Web.Script.Services
 
 
+
 Public Class FromQeations
     Inherits System.Web.UI.Page
 
@@ -27,13 +28,43 @@ Public Class FromQeations
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             If Session("pousr") IsNot Nothing Then
-                hfUid.Value = Session("pousr").ToString()
+                Dim userName As String = Session("pousr").ToString() ' ดึงชื่อผู้ใช้จาก Session
+
+                ' สร้างตัวแปรสำหรับ Supplierid
+                Dim supplierId As String = String.Empty
+
+                ' สร้าง SQL Query เพื่อค้นหา Supplierid
+                Dim qry As String = "SELECT Supplierid FROM PSR_M_User WHERE Usrname = @username"
+
+                ' ดึงข้อมูลจากฐานข้อมูล
+                Using conn As New SqlConnection(connStr)
+                    conn.Open()
+                    Using cmd As New SqlCommand(qry, conn)
+                        cmd.Parameters.AddWithValue("@username", userName)
+                        Dim result As Object = cmd.ExecuteScalar() ' ดึงค่า Supplierid
+                        If result IsNot Nothing Then
+                            supplierId = result.ToString() ' เก็บค่า Supplierid ที่ได้
+                        End If
+                    End Using
+                End Using
+
+                ' ตรวจสอบว่า Supplierid ถูกดึงมาได้หรือไม่
+                If String.IsNullOrEmpty(supplierId) Then
+                    lblSupplierId.InnerText = "No Supplier ID found for this user."
+                Else
+                    ' เก็บ Supplierid ใน Session เพื่อใช้ในหน้าอื่น ๆ
+                    Session("Supplierid") = supplierId
+
+                    ' แสดงผล Supplierid ที่ได้จากฐานข้อมูล
+                    lblSupplierId.InnerText = "Supplier ID: " & supplierId ' ใช้ Label หรือ Control อื่น ๆ เพื่อแสดงผล
+                End If
             Else
-                ' ถ้าไม่มี session ให้ redirect กลับไปหน้า login
+                ' ถ้าไม่มี Session("pousr"), ให้ redirect ไปหน้า Login
                 Response.Redirect("~/Login.aspx")
             End If
         End If
     End Sub
+
 
 
     <WebMethod()>
