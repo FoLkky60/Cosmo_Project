@@ -4,3 +4,7 @@
 *.config
 /.vs/WebApplication1/config
 *.xml
+*.xml
+*.dll
+*.dll
+*.pdb

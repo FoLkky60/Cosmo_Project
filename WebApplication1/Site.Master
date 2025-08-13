@@ -41,7 +41,6 @@
             </a>
            
                 <div class="navber gap-5">
-                    <a href="#" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal"></a>
                     <a href="home" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">home</a>
                     <a href="ProfilePage" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">Profile</a>
                     <div class="d-flex gap-5">
