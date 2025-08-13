@@ -368,13 +368,12 @@ Public Class Login
                     '// ปิดเก็บ log เวลาเข้าระบบ จะ publish ค่อยมาเปิด / 29-01-2568
                     If objUsr.GetUserType(Session("pousr")) = "Admin" Or objUsr.GetUserType(Session("pousr")) = "Administrator" Then
 
-                        'objMyconn.mQryNoReturn(objLogs_.SqlCmd_Insert(objLogs))
+
                         Response.Redirect("Form/FrmMonitorAcceptPolicy.aspx?ids=" & UCase(txtUsername.Text.Trim) & "")
 
 
                     ElseIf objUsr.GetUserType(Session("pousr")) = "Supplier" Then
 
-                        'objMyconn.mQryNoReturn(objLogs_.SqlCmd_Insert(objLogs))
                         Response.Redirect("https://webcosmo.cosmo.co.th/Policy/ListPolicySent.aspx?user=" & UCase(txtUsername.Text.Trim) & "")
 
                     End If
@@ -387,7 +386,7 @@ Public Class Login
 
         End Select
 
-    End Sub ' ตรวจสอบสิทธิ์การเข้าใช้งาน
+    End Sub
 
 
 #Region "ตรวจสอบสถานะระงับการใช้งาน"
@@ -436,7 +435,6 @@ Public Class Login
 
         Dim script As String = "<SCRIPT LANGUAGE=""JavaScript"">alert(""" & Message & """)</SCRIPT>"
         Page.ClientScript.RegisterStartupScript(Page.GetType(), "null", script)
-        '######################
 
     End Sub
 #End Region
