@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Home.aspx.vb" Inherits="WebApplication1.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="hfUid" runat="server" ClientIDMode="Static" />
+
     <div class="bg-cusmo-customs">
         <div class="p-50 d-flex  align-items-start flex-column-reverse flex-lg-row">
             <div class="d-flex flex-column justify-content-between align-items-center gap-5  text-white p-5 ">
@@ -180,6 +182,12 @@
                 </div>
             </div> 
     </div>-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userId = document.getElementById("hfUid").value;
+            console.log("👤 Current session user:", userId);
+        });
 
+    </script>
 
 </asp:Content>

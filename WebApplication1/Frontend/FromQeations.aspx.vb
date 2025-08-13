@@ -25,7 +25,16 @@ Public Class FromQeations
     End Class
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            If Session("pousr") IsNot Nothing Then
+                hfUid.Value = Session("pousr").ToString()
+            Else
+                ' ถ้าไม่มี session ให้ redirect กลับไปหน้า login
+                Response.Redirect("~/Login.aspx")
+            End If
+        End If
     End Sub
+
 
     <WebMethod()>
     <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>

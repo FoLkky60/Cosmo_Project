@@ -41,6 +41,15 @@ Partial Public Class FromQeations
     Protected WithEvents hdfSupplierId As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''hfUid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hfUid As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''rbt_1 control.
     '''</summary>
     '''<remarks>

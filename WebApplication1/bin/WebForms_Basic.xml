@@ -595,6 +595,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication1.FromQeations._hfUid">
+<summary>
+hfUid control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication1.FromQeations._rbt_1">
 <summary>
 rbt_1 control.
@@ -5233,6 +5242,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication1.FromQeations._btSave">
 <summary>
 btSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication1.Home._hfUid">
+<summary>
+hfUid control.
 </summary>
 <remarks>
 Auto-generated field.

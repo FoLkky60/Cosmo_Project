@@ -114,6 +114,7 @@
             document.getElementById('loginBlock').classList.remove('hidden');
             document.getElementById('loginBlock').classList.add('show');
         }
+
     </script>
 
 </body>

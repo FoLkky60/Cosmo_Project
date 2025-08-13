@@ -1,5 +1,114 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master/FromMaster.Master" CodeBehind="FromQeations.aspx.vb" Inherits="WebApplication1.FromQeations" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        // ===== helpers =====
+        const LS_PREFIX = 'formcache:';
+        const keyForRadioGroup = (groupName) => `${LS_PREFIX}rb:${groupName}`;
+        const keyForNote = (id) => `${LS_PREFIX}note:${id}`;
+
+        function saveRadio(groupName, value) {
+            localStorage.setItem(keyForRadioGroup(groupName), value);
+            console.log(`✅ saved local rb[${groupName}] = ${value}`);
+        }
+        function loadRadio(groupName) {
+            const v = localStorage.getItem(keyForRadioGroup(groupName));
+            console.log(v === null ? `⚠️ no local rb for ${groupName}` : `📦 loaded local rb[${groupName}] = ${v}`);
+            return v;
+        }
+        function saveNote(id, val) {
+            localStorage.setItem(keyForNote(id), val ?? '');
+            console.log(`✅ saved local note[${id}] length=${(val || '').length}`);
+        }
+        function loadNote(id) {
+            const v = localStorage.getItem(keyForNote(id));
+            console.log(v === null ? `⚠️ no local note for ${id}` : `📦 loaded local note[${id}] length=${v.length}`);
+            return v;
+        }
+
+
+        function wireUpSection(sectionEl) {
+            // radios
+            const radios = sectionEl.querySelectorAll('input[type="radio"]');
+            const groupNames = Array.from(new Set(Array.from(radios).map(r => r.name)));
+
+            // restore
+            groupNames.forEach(groupName => {
+                const saved = loadRadio(groupName);
+                if (!saved) return;
+                const targetWrapper = sectionEl.querySelector(`.detail-quations[data-answer="${CSS.escape(saved)}"]`);
+                const targetRadio = targetWrapper?.querySelector(`input[type="radio"][name="${CSS.escape(groupName)}"]`);
+                if (targetRadio) targetRadio.checked = true;
+            });
+
+            // save on change
+            radios.forEach(rb => {
+                const wrap = rb.closest('.detail-quations');
+                const answer = wrap?.dataset.answer || '';
+                if (wrap) {
+                    wrap.addEventListener('click', (e) => {
+                        if (e.target.tagName !== 'INPUT') rb.checked = true;
+                        rb.dispatchEvent(new Event('change', { bubbles: true }));
+                    });
+                }
+                rb.addEventListener('change', () => {
+                    if (rb.checked) saveRadio(rb.name, answer);
+                });
+            });
+
+            // note
+            const note = sectionEl.querySelector('[data-note="true"]');
+            if (note) {
+                const savedNote = loadNote(note.id);
+                if (savedNote !== null) note.value = savedNote;
+                let t;
+                note.addEventListener('input', () => {
+                    clearTimeout(t);
+                    t = setTimeout(() => saveNote(note.id, note.value), 150);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.section-from').forEach(sec => wireUpSection(sec));
+        });
+
+        function softRefreshUI() {
+            document.querySelectorAll('.section-from').forEach(sec => {
+                sec.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+                sec.querySelectorAll('[data-note="true"]').forEach(t => t.value = '');
+            });
+            console.log('🔄 soft refresh: cleared UI without full reload');
+        }
+
+        window.clearLocalAnswers = function () {
+            Object.keys(localStorage)
+                .filter(k => k.startsWith(LS_PREFIX))
+                .forEach(k => localStorage.removeItem(k));
+            console.log('🧹 cleared all local formcache');
+
+            softRefreshUI();
+        };
+        document.addEventListener("DOMContentLoaded", function () {
+            const userId = document.getElementById("hfUid").value;
+            console.log("Session user ID:", userId);
+
+            if (userId) {
+                fetch(`/Frontend/FromQeationsData?user=${encodeURIComponent(userId)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("📦 Data loaded successfully:", data);
+                    })
+                    .catch(err => {
+                        console.error("❌ Error loading data:", err);
+                    });
+            }
+            else {
+                console.warn("⚠️ No user ID found in session.");
+            }
+        });
+
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex justify-content-center">
@@ -16,6 +125,7 @@
                     <div class="border border-secondary p-2 pt-5">
                         <asp:hiddenfield id="hdfTlsId" runat="server"></asp:hiddenfield>
                         <asp:hiddenfield id="hdfSupplierId" runat="server"></asp:hiddenfield>
+                        <asp:HiddenField ID="hfUid" runat="server" ClientIDMode="Static" />
                         <div align="center" cellpadding="0" cellspacing="0" class="p-4" id="tblCustomers"
                             width="1024px">
                             <div class="d-flex justify-content-between">
@@ -3603,9 +3713,11 @@
                     </asp:button>
                     <asp:button cssclass="btn-submit" id="btSave" runat="server" text="SAVE" visible="true">
                     </asp:button>
+                    <button type="button" onclick="clearLocalAnswers()">ล้างคำตอบที่บันทึกในเครื่อง</button>
+
                 </div>
                 
-<button type="button" onclick="saveAjax()">บันทึก (AJAX)</button>
+                <button type="button" onclick="saveAjax()">บันทึก (AJAX)</button>
             </div>
         </div>
     </div>
@@ -3681,10 +3793,7 @@
                 el.addEventListener('change', onNoteInput); // เผื่อ paste/IME
             });
         });
-    </script>
 
-
-    <script>
         // ฟังก์ชันในการเก็บข้อมูลลงในคุกกี้
         function saveDataToCookie() {
             // วนลูปผ่านทุก RadioButton
@@ -3745,9 +3854,7 @@
         document.querySelectorAll('input[type="text"]').forEach((textbox) => {
             textbox.addEventListener('input', saveDataToCookie);
         });
-    </script>
 
-    <script>
         function parseQuestionBlock(row) {
             const group = row.dataset.group || "";
             const section = row.dataset.section || "";
@@ -3803,40 +3910,36 @@
         }
         window.addEventListener('DOMContentLoaded', loadDataFromCookie);
 
-    </script>
-<script>
-    async function saveOne(item) {
-        try {
-            const res = await fetch('<%= ResolveUrl("~/Frontend/FromQeations.aspx/SaveOne") %>', {
+        async function saveOne(item) {
+            try {
+                const res = await fetch('<%= ResolveUrl("~/Frontend/FromQeations.aspx/SaveOne") %>', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify({ item })
+                });
+                if (!res.ok) {
+                    const txt = await res.text();
+                    throw new Error(`HTTP ${res.status} ${res.statusText}\n${txt}`);
+                }
+                const data = await res.json();
+                const result = data.d || data;
+                console.log('บันทึกสำเร็จ', result);
+            } catch (err) {
+                console.error('บันทึกล้มเหลว', err);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('<%= ResolveUrl("~/Frontend/FromQeations.aspx/Ping") %>', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json; charset=utf-8' },
                 credentials: 'same-origin',
-                body: JSON.stringify({ item })
-            });
-            if (!res.ok) {
-                const txt = await res.text();
-                throw new Error(`HTTP ${res.status} ${res.statusText}\n${txt}`);
-            }
-            const data = await res.json();
-            const result = data.d || data;
-            console.log('บันทึกสำเร็จ', result);
-        } catch (err) {
-            console.error('บันทึกล้มเหลว', err);
-        }
-    }
-
-</script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('<%= ResolveUrl("~/Frontend/FromQeations.aspx/Ping") %>', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json; charset=utf-8' },
-        credentials: 'same-origin',
-        body: '{}'
-    })
-        .then(r => r.json())
-        .then(data => console.log('Ping result:', data));
-});
+                body: '{}'
+            })
+                .then(r => r.json())
+                .then(data => console.log('Ping result:', data));
+        });
     </script>
 
 </asp:Content>
