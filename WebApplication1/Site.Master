@@ -40,13 +40,15 @@
                 <img src="../imge/Logo01.png" width="20" height="20" />
             </a>
            
-                <div class=" d-flex gap-5">
+                <div class="navber gap-5">
+                    <a href="#" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal"></a>
                     <a href="home" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">home</a>
                     <a href="ProfilePage" class="cursor-pointer text-nav custom-link text-decoration-none fw-normal">Profile</a>
+                    <div class="d-flex gap-5">
+                        <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
+                    </div>
                 </div>
-                <div class="d-flex gap-5">
-                    <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="True" CssClass="btnlog" />
-                </div>
+                
           
 
             <!-- Hamburger Menu -->
@@ -147,14 +149,26 @@
         });
     </script>
 
-    <!-- Toggle navigation visibility -->
+
     <script>
         function toggleNav() {
             const nav = document.querySelector('.navber');
             const isVisible = nav.style.display === 'flex';
 
+
             nav.style.display = isVisible ? 'none' : 'flex';
         }
+
+
+        window.addEventListener('resize', function () {
+            const nav = document.querySelector('.navber');
+            const isMobile = window.innerWidth <= 767;
+
+            if (!isMobile) {
+                nav.style.display = 'flex'; 
+            }
+        });
+
     </script>
 
 

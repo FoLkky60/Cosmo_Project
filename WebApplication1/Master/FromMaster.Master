@@ -127,6 +127,14 @@
 
             nav.style.display = isVisible ? 'none' : 'flex';
         }
+        window.addEventListener('resize', function () {
+            const nav = document.querySelector('.navber');
+            const isMobile = window.innerWidth <= 767;
+
+            if (!isMobile) {
+                nav.style.display = 'flex';
+            }
+        });
     </script>
 
 

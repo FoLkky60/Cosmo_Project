@@ -46,7 +46,7 @@
                     <h5 class="mt-3">Home</h5>
                 </div>
             </a>
-            <a href="RestingPage" class="main-box  shadow rounded-4 p-4">
+            <a href="FromQeations" class="main-box  shadow rounded-4 p-4">
                 <div class=" d-flex justify-content-center align-items-center flex-column   ">
                     <iconify-icon icon="mingcute:paper-fill" width="80" height="80"></iconify-icon>
                     <h5 class="mt-3">แบบประเมิน</h5>
