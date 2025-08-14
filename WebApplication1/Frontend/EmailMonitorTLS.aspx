@@ -9,7 +9,17 @@
 
         window.onload = function () {
             CKEDITOR.replace('<%= txtBody.ClientID %>', {
-                height: 200,
+                height: 200, 
+                toolbar: [
+                    { name: 'document', items: ['Source', '-', 'Save'] },
+                    { name: 'clipboard', items: ['Undo', 'Redo'] },
+                    { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'] },
+                    { name: 'colors', items: ['TextColor', 'BGColor'] }, 
+                    { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+                    { name: 'links', items: ['Link', 'Unlink'] },
+                    { name: 'insert', items: ['Image', 'Table', 'HorizontalRule'] },
+                    { name: 'styles', items: ['Format', 'FontSize'] }
+                ]
 
             });
         };
@@ -60,17 +70,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="min-vh-100 p-3 ">
         <div class=" d-flex justify-content-center align-items-start flex-column  gap-2 d-lg-flex flex-lg-row ">
-            <div class="p-4">
-                <div class=" d-flex justify-content-center align-items-center flex-column shadowcustom p-4 rounded-4 usercard bg-white ">
-                    <img src="../imge/3135715.png" width="200" height="200" class=" rounded-img " />
-                    <div class="pt-4">
-                        <div class=" d-flex justify-content-center  p-1 bg-success rounded-5 px-2 w-fit text-white tiny shadowcustom">Admin</div>
-                    </div>
-                    <div class=" d-flex  text-start gap-2 p-4 fw-light ">
-                        <div class="text-start">Dr.test testttt </div>
-                    </div>
-                </div>
-            </div>
+            
 
 
             <div class=" d-flex gap-2 flex-column w-100 mw p-2 ">
@@ -149,20 +149,43 @@
                         OnRowCommand="GridViewMailFormat_RowCommand"
                         >
                         <PagerStyle CssClass="pager" HorizontalAlign="Center" />
-                        <Columns>
-                            <asp:BoundField DataField="MailID" HeaderText="MailID" />
-                            <asp:BoundField DataField="Type_Mail" HeaderText="Type Mail" />
-                            <asp:BoundField DataField="Year" HeaderText="Year" />
-                            <asp:BoundField DataField="Subject" HeaderText="Subject" />
-                            <asp:BoundField DataField="ApprovedBy" HeaderText="Approved By" />
-                            <asp:BoundField DataField="ApprovedDate" HeaderText="Approved Date" />
-                            <asp:BoundField DataField="CreatedDate" HeaderText="Created Date" />
-                            <asp:BoundField DataField="CreatedBy" HeaderText="Created By" />
-                            <asp:BoundField DataField="UpdatedDate" HeaderText="Updated Date" />
-                            <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By" />
-                            <asp:BoundField DataField="Status" HeaderText="Status" />
+                       <Columns>
+                            <asp:BoundField DataField="MailID" HeaderText="MailID">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Type_Mail" HeaderText="Type Mail">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Year" HeaderText="Year">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Subject" HeaderText="Subject">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="ApprovedBy" HeaderText="Approved By">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="ApprovedDate" HeaderText="Approved Date">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="CreatedDate" HeaderText="Created Date">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="CreatedBy" HeaderText="Created By">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="UpdatedDate" HeaderText="Updated Date">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Status" HeaderText="Status">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
+                            </asp:BoundField>
 
                             <asp:TemplateField HeaderText="View">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
                                 <ItemTemplate>
                                     <asp:LinkButton
                                         ID="lnkView"
@@ -175,6 +198,7 @@
               
 
                             <asp:TemplateField HeaderText="Send Mail">
+                                <ItemStyle CssClass="p-2 border border-1 text-center" />
                                 <ItemTemplate>
                                     <asp:Button
                                         ID="btnSendMail"

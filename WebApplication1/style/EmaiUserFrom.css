@@ -1,105 +1,98 @@
-﻿* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+﻿
+/* กำหนดเฉพาะ editor ของ my-editor */
+.my-editor + .cke {
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ffffff;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: none; 
 }
 
 .cke_notifications_area {
     display: none;
 }
-
-.email-container {
-    background: #ffffff;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(6, 91, 167, 0.12), 0 2px 8px rgba(6, 91, 167, 0.08);
-    width: 100%;
-    max-width: 480px;
-    overflow: hidden;
-    border: 1px solid rgba(6, 91, 167, 0.08);
+.cke {
+    border: none; /* สีฟ้า */
 }
 
-.header {
-    background: linear-gradient(135deg, #065ba7 0%, #0a7bc4 100%);
-    color: white;
-    padding: 24px 28px;
-    text-align: center;
-    position: relative;
+/* เลือก toolbar */
+.cke_top {
+    background-color: #f0f0f0;
+    border-bottom: none;
 }
-
-    .header h1 {
-        font-size: 22px;
-        margin-bottom: 6px;
-        font-weight: 600;
-        letter-spacing: -0.5px;
+    .cke_top .cke_button:hover {
+        background-color: #b2ebf2;
     }
 
-    .header p {
-        opacity: 0.92;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-.form-container {
-    padding: 28px 32px 32px;
-    background: #ffffff;
+.cke_top {
+    border-bottom: 3px solid #d1d1d1;
+    background: #f8f8f8;
+    padding: 6px 8px 2px;
+    white-space: normal;
 }
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    color: #1a1a1a;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 14px;
-    letter-spacing: -0.2px;
-}
-
-input[type="email"],
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1.5px solid #e8eaed;
-    border-radius: 12px;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    background: #ffffff;
-    color: #1a1a1a;
-    font-family: inherit;
-}
-
-    input[type="email"]:focus,
-    input[type="text"]:focus,
-    textarea:focus {
-        outline: none;
-        border-color: #065ba7;
-        box-shadow: 0 0 0 3px rgba(6, 91, 167, 0.08);
-    }
-
-textarea {
-    resize: vertical;
-    min-height: 90px;
-    line-height: 1.5;
-}
-
-.file-input-group {
+    .file-input-group {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+/* Toolbar ของ editor */
+.my-editor + .cke .cke_top {
+    border: none; /* ลบ border */
+    background-color: #f8f8f8; /* จะเปลี่ยนสี toolbar ก็ได้ */
+    padding: 6px 8px;
+}
+
+/* ปุ่มบน toolbar */
+.my-editor + .cke .cke_button {
+    border: none; /* ลบ border ปุ่ม */
+    background-color: transparent;
+}
+
+    /* hover ปุ่ม */
+    .my-editor + .cke .cke_button:hover {
+        background-color: #e0e0e0; /* สีเวลาชี้เมาส์ */
+    }
+
+/* พื้นหลังของ editor */
+.my-editor + .cke .cke_contents {
+    border: none; /* ลบ border ของ editor area */
+    background-color: #ffffff;
+}
+
+/* ตัวหนังสือใน editor */
+.my-editor + .cke .cke_editable {
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* ส่วนล่างของ CKEditor (status bar) */
+.my-editor + .cke .cke_bottom {
+    padding: 6px 8px 2px; /* กำหนด padding ตามเดิม */
+    position: relative;
+    border-top: none; /* เอาเส้น border บนออก */
+    background: #f8f8f8; /* สีพื้นหลังยังคงเหมือนเดิม */
+}
+
+
+
+.no-border {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 14px;
+}
+
+    .no-border::placeholder {
+        color: #888; /* สีของ placeholder */
+        font-style: italic; /* ตัวเอียง */
+        font-size: 14px; /* ขนาดฟอนต์ */
+    }
+
+
+
+
+.no-focus:focus {
+    outline: none; /* ไม่ให้แสดงเส้นรอบๆ เมื่อถูก focus */
 }
 
 .file-input-wrapper {
@@ -355,35 +348,6 @@ textarea {
         .header p {
             font-size: 12px;
         }
-}
-
-.overflows {
-    width: 500px;
-    overflow: auto;
-}
-
-.contain {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-    border: none;
-    color: white;
-}
-
-.container-main {
-    display:flex;
-    align-content:center;
-    flex-direction:column;
-    background-color:white;
-    border-radius:10px;
-    width:400px;
-    height:auto;
-    overflow:hidden;
-    padding-bottom:15px;
-
 }
 
 

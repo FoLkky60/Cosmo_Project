@@ -2,22 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="min-vh-100 p-3 ">
-        <div class=" d-flex justify-content-center align-items-start flex-column  gap-2 d-lg-flex flex-lg-row ">
-            <div class="p-4">
-                <div class=" d-flex justify-content-center align-items-center flex-column shadowcustom p-4 rounded-4 usercard bg-white ">
-                    <img src="../imge/3135715.png" width="200" height="200" class=" rounded-img " />
-                    <div class="pt-4">
-                        <div class=" d-flex justify-content-center  p-1 bg-success rounded-5 px-2 w-fit text-white tiny shadowcustom">Admin</div>
-                    </div>
-                    <div class=" d-flex  text-start gap-2 p-4 fw-light ">
-                        <div class="text-start">Dr.test testttt </div>
-                    </div>
-                </div>
-            </div>
-
-
-
+        <div class=" d-flex justify-content-center min-vh-100 p-3 ">
+       
             <div class="datagrid w-100 mw ">
                 <div class="p-2 ">
                     <div class="  d-flex flex-column p-4  rounded-4">

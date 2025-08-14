@@ -39,49 +39,59 @@ Public Class SendEmailFrom
 
         ' Insert ข้อมูลอีเมลและรับ MailID
         Dim mailID As Integer = 0
-        Using conn As New SqlConnection(connStr)
-            conn.Open()
-            Dim cmd As New SqlCommand("
+        Try
+            Using conn As New SqlConnection(connStr)
+                conn.Open()
+                Dim cmd As New SqlCommand("
             INSERT INTO PSR_M_MailFormat
             (Type_Mail, Year, Subject, Body, Status, CreatedDate, CreatedBy)
             VALUES (@Type_Mail, @Year, @Subject, @Body, @Status, GETDATE(), @CreatedBy);
             SELECT SCOPE_IDENTITY();", conn)
-            cmd.Parameters.AddWithValue("@Type_Mail", 1)
-            cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year)
-            cmd.Parameters.AddWithValue("@Subject", subject)
-            cmd.Parameters.AddWithValue("@Body", body)
-            cmd.Parameters.AddWithValue("@Status", "Pending")
-            cmd.Parameters.AddWithValue("@CreatedBy", "admin")
-            mailID = Convert.ToInt32(cmd.ExecuteScalar())
-        End Using
+                cmd.Parameters.AddWithValue("@Type_Mail", 1)
+                cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year)
+                cmd.Parameters.AddWithValue("@Subject", subject)
+                cmd.Parameters.AddWithValue("@Body", body)
+                cmd.Parameters.AddWithValue("@Status", "Pending")
+                cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+                mailID = Convert.ToInt32(cmd.ExecuteScalar())
+            End Using
 
-        ' วนบันทึกไฟล์ทั้งหมด
-        For Each postedFile As HttpPostedFile In fuFiles.PostedFiles
-            Dim fileName As String = Path.GetFileName(postedFile.FileName)
-            Dim savePath As String = Server.MapPath("../FileUpload/" & fileName)
-            postedFile.SaveAs(savePath)
+            ' วนบันทึกไฟล์ทั้งหมด
+            For Each postedFile As HttpPostedFile In fuFiles.PostedFiles
+                Dim fileName As String = Path.GetFileName(postedFile.FileName)
+                Dim savePath As String = Server.MapPath("../FileUpload/" & fileName)
+                postedFile.SaveAs(savePath)
 
-            Using conn As New SqlConnection(connStr)
-                conn.Open()
-                Dim cmd As New SqlCommand("
+                Using conn As New SqlConnection(connStr)
+                    conn.Open()
+                    Dim cmd As New SqlCommand("
                 INSERT INTO PSR_M_MailAttachments
                 (MailID, Folder_name, File_name, Files_link, CreatedDate, CreatedBy, UpdatedDate, UpdatedBy)
                 VALUES (@MailID, @Folder_name, @File_name, @Files_link, GETDATE(), @CreatedBy, GETDATE(), @UpdatedBy)", conn)
-                cmd.Parameters.AddWithValue("@MailID", mailID)
-                cmd.Parameters.AddWithValue("@Folder_name", "SampleFolder")
-                cmd.Parameters.AddWithValue("@File_name", fileName)
-                cmd.Parameters.AddWithValue("@Files_link", "../FileUpload/" & fileName)
-                cmd.Parameters.AddWithValue("@CreatedBy", "admin")
-                cmd.Parameters.AddWithValue("@UpdatedBy", "admin")
-                cmd.ExecuteNonQuery()
-            End Using
-        Next
+                    cmd.Parameters.AddWithValue("@MailID", mailID)
+                    cmd.Parameters.AddWithValue("@Folder_name", "SampleFolder")
+                    cmd.Parameters.AddWithValue("@File_name", fileName)
+                    cmd.Parameters.AddWithValue("@Files_link", "../FileUpload/" & fileName)
+                    cmd.Parameters.AddWithValue("@CreatedBy", "admin")
+                    cmd.Parameters.AddWithValue("@UpdatedBy", "admin")
+                    cmd.ExecuteNonQuery()
+                End Using
+            Next
 
-        ' ล้างฟอร์มและแสดง popup สำเร็จ
-        txtRecipient.Text = ""
-        txtSubject.Text = ""
-        txtBody.Text = ""
-        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showPopup", "showSuccessPopup();resetForm();", True)
+            ' ล้างฟอร์ม
+            txtRecipient.Text = ""
+            txtSubject.Text = ""
+            txtBody.Text = ""
+
+            ' แสดง alert เมื่อส่งอีเมลสำเร็จ
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showAlert", "showSuccessAlert();", True)
+
+        Catch ex As Exception
+            ' หากเกิดข้อผิดพลาด, คุณสามารถแสดงข้อความแสดงข้อผิดพลาดที่นี่
+            ' เช่น ใช้ alert หรือข้อความ error บนหน้า
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showErrorAlert", "alert('ไม่สามารถส่งอีเมลได้: " & ex.Message & "');", True)
+        End Try
     End Sub
+
 
 End Class
